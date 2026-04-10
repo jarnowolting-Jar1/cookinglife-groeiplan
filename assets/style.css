@@ -1,0 +1,1322 @@
+/* ============================================================
+   Cookinglife AI-Visibility Demo — Gedeelde Stylesheet
+   Nagebouwde huisstijl van cookinglife.nl
+   ============================================================ */
+
+:root {
+  --cl-pink: #DD195A;
+  --cl-pink-dark: #B5124A;
+  --cl-green: #8EC760;
+  --cl-green-dark: #72A94A;
+  --cl-bg: #FFFFFF;
+  --cl-bg-soft: #FAFAFA;
+  --cl-text: #1A1A1A;
+  --cl-muted: #6B6B6B;
+  --cl-border: #E8E8E8;
+  --cl-hover: #F7F7F7;
+  --cl-warn: #FDF6E3;
+  --cl-star: #F5B301;
+  --cl-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --cl-shadow-lg: 0 6px 24px rgba(0, 0, 0, 0.08);
+  --cl-radius: 8px;
+  --cl-container: 1280px;
+  --cl-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--cl-font);
+  color: var(--cl-text);
+  background: var(--cl-bg);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { color: var(--cl-pink); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.cl-container {
+  max-width: var(--cl-container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Topbar / Header ---------- */
+.cl-topbar {
+  background: var(--cl-pink);
+  color: #fff;
+  font-size: 13px;
+  padding: 8px 0;
+  text-align: center;
+}
+.cl-topbar strong { font-weight: 600; }
+.cl-topbar span + span::before {
+  content: "•";
+  margin: 0 10px;
+  opacity: 0.6;
+}
+
+.cl-header {
+  border-bottom: 1px solid var(--cl-border);
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.cl-header-inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 18px 0;
+}
+.cl-logo {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--cl-text);
+  flex-shrink: 0;
+}
+.cl-logo span { color: var(--cl-pink); }
+.cl-logo small {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--cl-muted);
+  letter-spacing: 1px;
+  margin-top: -4px;
+}
+.cl-search {
+  flex: 1;
+  display: flex;
+  border: 2px solid var(--cl-pink);
+  border-radius: 999px;
+  overflow: hidden;
+  max-width: 640px;
+}
+.cl-search input {
+  flex: 1;
+  border: 0;
+  padding: 12px 18px;
+  font-size: 14px;
+  outline: none;
+  font-family: inherit;
+}
+.cl-search button {
+  background: var(--cl-pink);
+  color: #fff;
+  border: 0;
+  padding: 0 22px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+.cl-header-actions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 13px;
+  color: var(--cl-text);
+}
+.cl-header-actions a {
+  color: var(--cl-text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-weight: 500;
+}
+.cl-header-actions a:hover { color: var(--cl-pink); text-decoration: none; }
+.cl-header-actions .cl-icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* Main nav */
+.cl-nav {
+  border-bottom: 1px solid var(--cl-border);
+  background: #fff;
+}
+.cl-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+.cl-nav li a {
+  display: block;
+  padding: 14px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cl-text);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  border-bottom: 3px solid transparent;
+}
+.cl-nav li a:hover {
+  color: var(--cl-pink);
+  border-bottom-color: var(--cl-pink);
+  text-decoration: none;
+}
+.cl-nav li a.sale { color: var(--cl-pink); }
+
+/* ---------- Breadcrumb ---------- */
+.cl-breadcrumb {
+  padding: 16px 0;
+  font-size: 13px;
+  color: var(--cl-muted);
+}
+.cl-breadcrumb a { color: var(--cl-muted); }
+.cl-breadcrumb a:hover { color: var(--cl-pink); }
+.cl-breadcrumb span + span::before { content: " › "; margin: 0 6px; }
+
+/* ---------- Demo banner ---------- */
+.cl-demo-banner {
+  background: linear-gradient(90deg, #FFF4F8 0%, #F0FBE6 100%);
+  border: 1px dashed var(--cl-pink);
+  border-radius: var(--cl-radius);
+  padding: 14px 20px;
+  margin: 16px 0 32px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+}
+.cl-demo-banner .cl-demo-tag {
+  background: var(--cl-pink);
+  color: #fff;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.cl-demo-banner strong { color: var(--cl-pink); }
+
+/* ---------- Buttons ---------- */
+.cl-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: var(--cl-pink);
+  color: #fff;
+  border: 0;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.15s;
+  font-family: inherit;
+  text-decoration: none;
+}
+.cl-btn:hover { background: var(--cl-pink-dark); text-decoration: none; color: #fff; }
+.cl-btn-green { background: var(--cl-green); }
+.cl-btn-green:hover { background: var(--cl-green-dark); }
+.cl-btn-outline {
+  background: transparent;
+  color: var(--cl-pink);
+  border: 2px solid var(--cl-pink);
+  padding: 12px 26px;
+}
+.cl-btn-outline:hover { background: var(--cl-pink); color: #fff; }
+.cl-btn-sm { padding: 8px 16px; font-size: 13px; }
+
+/* ---------- Section headings ---------- */
+.cl-section { padding: 48px 0; }
+.cl-section h2 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  margin: 0 0 8px;
+}
+.cl-section h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 32px 0 12px;
+}
+.cl-section h4 { font-size: 17px; font-weight: 700; margin: 24px 0 8px; }
+.cl-section-sub {
+  color: var(--cl-muted);
+  font-size: 15px;
+  margin: 0 0 28px;
+}
+
+/* ---------- USP strook ---------- */
+.cl-usp {
+  background: var(--cl-bg-soft);
+  border-top: 1px solid var(--cl-border);
+  border-bottom: 1px solid var(--cl-border);
+  padding: 18px 0;
+}
+.cl-usp ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.cl-usp li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.cl-usp li::before {
+  content: "✓";
+  color: var(--cl-green);
+  font-weight: 900;
+  font-size: 16px;
+}
+
+/* ---------- Product card ---------- */
+.cl-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+.cl-product-card {
+  background: #fff;
+  border: 1px solid var(--cl-border);
+  border-radius: var(--cl-radius);
+  padding: 16px;
+  transition: all 0.2s;
+  position: relative;
+}
+.cl-product-card:hover {
+  box-shadow: var(--cl-shadow-lg);
+  transform: translateY(-2px);
+}
+.cl-product-card .cl-product-img {
+  aspect-ratio: 1;
+  background: var(--cl-bg-soft);
+  border-radius: 6px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+.cl-product-card h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 4px;
+  color: var(--cl-text);
+  line-height: 1.3;
+}
+.cl-product-card .cl-brand {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--cl-muted);
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+.cl-price {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--cl-text);
+}
+.cl-price-old {
+  font-size: 13px;
+  color: var(--cl-muted);
+  text-decoration: line-through;
+  margin-right: 8px;
+  font-weight: 500;
+}
+.cl-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--cl-pink);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.cl-badge-green { background: var(--cl-green); }
+
+/* ---------- Tabellen (vergelijking) ---------- */
+.cl-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--cl-border);
+  border-radius: var(--cl-radius);
+  margin: 24px 0;
+}
+.cl-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  background: #fff;
+}
+.cl-comparison-table thead {
+  background: var(--cl-pink);
+  color: #fff;
+}
+.cl-comparison-table th,
+.cl-comparison-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--cl-border);
+  vertical-align: top;
+}
+.cl-comparison-table th {
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+.cl-comparison-table tbody tr:nth-child(even) { background: var(--cl-bg-soft); }
+.cl-comparison-table tbody tr:hover { background: #FFF4F8; }
+.cl-comparison-table td:first-child {
+  font-weight: 600;
+  background: var(--cl-bg-soft);
+  border-right: 1px solid var(--cl-border);
+}
+.cl-comparison-table .cl-check { color: var(--cl-green); font-weight: 900; }
+.cl-comparison-table .cl-cross { color: #CC2D4A; font-weight: 900; }
+
+/* ---------- FAQ (details/summary) ---------- */
+.cl-faq { margin: 24px 0; }
+.cl-faq details {
+  border: 1px solid var(--cl-border);
+  border-radius: var(--cl-radius);
+  margin-bottom: 10px;
+  background: #fff;
+  transition: box-shadow 0.15s;
+}
+.cl-faq details[open] { box-shadow: var(--cl-shadow); }
+.cl-faq summary {
+  padding: 18px 24px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--cl-text);
+}
+.cl-faq summary::-webkit-details-marker { display: none; }
+.cl-faq summary::after {
+  content: "+";
+  font-size: 24px;
+  color: var(--cl-pink);
+  font-weight: 300;
+  transition: transform 0.2s;
+}
+.cl-faq details[open] summary::after { content: "−"; }
+.cl-faq .cl-faq-body {
+  padding: 0 24px 22px;
+  color: var(--cl-text);
+  font-size: 15px;
+  border-top: 1px solid var(--cl-border);
+  padding-top: 16px;
+}
+.cl-faq .cl-faq-body p:first-child { margin-top: 0; }
+.cl-faq .cl-faq-body p:last-child { margin-bottom: 0; }
+.cl-faq .cl-faq-lead {
+  font-weight: 600;
+  color: var(--cl-pink);
+  margin-bottom: 8px !important;
+}
+
+/* ---------- HowTo steps ---------- */
+.cl-howto-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  background: var(--cl-bg-soft);
+  border: 1px solid var(--cl-border);
+  border-radius: var(--cl-radius);
+  padding: 20px;
+  margin: 24px 0;
+}
+.cl-howto-meta div { text-align: center; }
+.cl-howto-meta strong {
+  display: block;
+  font-size: 11px;
+  color: var(--cl-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+.cl-howto-meta span { font-size: 18px; font-weight: 700; }
+
+.cl-howto-steps {
+  counter-reset: step;
+  list-style: none;
+  padding: 0;
+  margin: 32px 0;
+}
+.cl-howto-steps > li {
+  counter-increment: step;
+  position: relative;
+  padding: 24px 24px 24px 88px;
+  margin-bottom: 16px;
+  background: #fff;
+  border: 1px solid var(--cl-border);
+  border-left: 4px solid var(--cl-pink);
+  border-radius: var(--cl-radius);
+}
+.cl-howto-steps > li::before {
+  content: counter(step);
+  position: absolute;
+  left: 20px;
+  top: 24px;
+  width: 48px;
+  height: 48px;
+  background: var(--cl-pink);
+  color: #fff;
+  font-size: 22px;
+  font-weight: 800;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cl-howto-steps h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+.cl-howto-steps .cl-step-time {
+  display: inline-block;
+  background: var(--cl-bg-soft);
+  color: var(--cl-muted);
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.cl-howto-steps p { margin: 8px 0 0; color: var(--cl-text); }
+
+.cl-tip {
+  background: var(--cl-warn);
+  border-left: 4px solid var(--cl-star);
+  padding: 14px 18px;
+  border-radius: 6px;
+  margin: 16px 0;
+  font-size: 14px;
+}
+.cl-tip strong { color: #9A6A00; }
+
+.cl-warning {
+  background: #FFF0F4;
+  border-left: 4px solid var(--cl-pink);
+  padding: 14px 18px;
+  border-radius: 6px;
+  margin: 16px 0;
+  font-size: 14px;
+}
+
+/* ---------- Stat blocks ---------- */
+.cl-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin: 32px 0;
+}
+.cl-stat-block {
+  background: linear-gradient(135deg, #FFF4F8 0%, #FFFFFF 100%);
+  border: 1px solid var(--cl-border);
+  border-left: 4px solid var(--cl-pink);
+  border-radius: var(--cl-radius);
+  padding: 24px;
+}
+.cl-stat-block .cl-stat-number {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--cl-pink);
+  line-height: 1;
+  letter-spacing: -1px;
+}
+.cl-stat-block .cl-stat-label {
+  font-size: 14px;
+  color: var(--cl-text);
+  font-weight: 600;
+  margin: 8px 0 10px;
+}
+.cl-stat-block .cl-stat-source {
+  font-size: 11px;
+  color: var(--cl-muted);
+  font-style: italic;
+}
+.cl-stat-block .cl-stat-source a { color: var(--cl-muted); text-decoration: underline; }
+
+/* ---------- Bronnen lijst ---------- */
+.cl-sources {
+  background: var(--cl-bg-soft);
+  border: 1px solid var(--cl-border);
+  border-radius: var(--cl-radius);
+  padding: 20px 24px;
+  margin: 32px 0;
+  font-size: 13px;
+}
+.cl-sources h4 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--cl-muted);
+}
+.cl-sources ol {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--cl-muted);
+}
+.cl-sources li { margin-bottom: 4px; }
+.cl-sources a { color: var(--cl-muted); text-decoration: underline; word-break: break-word; }
+
+/* ---------- Product page layout (Cookinglife exact) ---------- */
+.cl-product-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin: 24px 0 0;
+  align-items: start;
+}
+.cl-gallery-wrap {
+  position: sticky;
+  top: 100px;
+}
+.cl-gallery-main {
+  background: var(--cl-bg-soft);
+  border: 1px solid var(--cl-border);
+  border-radius: var(--cl-radius);
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 180px;
+  margin-bottom: 12px;
+}
+.cl-gallery-thumbs {
+  display: flex;
+  gap: 8px;
+}
+.cl-gallery-thumbs .cl-thumb {
+  width: 72px;
+  height: 72px;
+  border: 2px solid var(--cl-border);
+  border-radius: 6px;
+  background: var(--cl-bg-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  cursor: pointer;
+}
+.cl-gallery-thumbs .cl-thumb.active { border-color: var(--cl-pink); }
+
+/* Product info right column */
+.cl-product-info .cl-brand-link {
+  font-size: 13px;
+  color: var(--cl-pink);
+  font-weight: 600;
+  text-decoration: underline;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+.cl-product-info h1 {
+  font-size: 24px;
+  margin: 0 0 12px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+.cl-product-info .cl-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  color: var(--cl-muted);
+  font-size: 13px;
+}
+.cl-stars { color: var(--cl-star); letter-spacing: 2px; }
+.cl-product-info .cl-price-block {
+  padding: 16px 0;
+  border-top: 1px solid var(--cl-border);
+  margin: 0 0 16px;
+}
+.cl-product-info .cl-price-big {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--cl-text);
+}
+.cl-product-info .cl-variants {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0 16px;
+  flex-wrap: wrap;
+}
+.cl-variants button {
+  background: #fff;
+  border: 2px solid var(--cl-border);
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: inherit;
+}
+.cl-variants button.active { border-color: var(--cl-pink); color: var(--cl-pink); }
+
+/* Green CTA button (like real Cookinglife) */
+.cl-btn-cart {
+  display: block;
+  width: 100%;
+  padding: 16px 28px;
+  background: var(--cl-green);
+  color: #fff;
+  border: 0;
+  border-radius: var(--cl-radius);
+  font-weight: 800;
+  font-size: 17px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.15s;
+  font-family: inherit;
+  letter-spacing: 0.3px;
+}
+.cl-btn-cart:hover { background: var(--cl-green-dark); text-decoration: none; color: #fff; }
+
+/* Delivery USPs under button */
+.cl-delivery-usps {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+  font-size: 13px;
+}
+.cl-delivery-usps li {
+  padding: 6px 0 6px 24px;
+  position: relative;
+  color: var(--cl-text);
+  border-bottom: 1px solid var(--cl-border);
+}
+.cl-delivery-usps li:last-child { border-bottom: 0; }
+.cl-delivery-usps li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--cl-green);
+  font-weight: 900;
+}
+
+/* "Waarom kiezen voor Cookinglife?" box */
+.cl-why-box {
+  background: var(--cl-bg-soft);
+  border: 1px solid var(--cl-border);
+  border-radius: var(--cl-radius);
+  padding: 20px;
+  margin-top: 20px;
+}
+.cl-why-box h3 {
+  font-size: 15px;
+  margin: 0 0 12px;
+  font-weight: 700;
+  color: var(--cl-text);
+}
+.cl-why-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+}
+.cl-why-box li {
+  padding: 5px 0 5px 22px;
+  position: relative;
+  color: var(--cl-text);
+}
+.cl-why-box li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--cl-green);
+  font-weight: 900;
+}
+
+/* ---------- Product content sections ---------- */
+.cl-product-content {
+  max-width: 100%;
+  margin: 48px 0 0;
+  border-top: 1px solid var(--cl-border);
+  padding-top: 40px;
+}
+.cl-product-content h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 40px 0 16px;
+  line-height: 1.3;
+}
+.cl-product-content h2:first-child { margin-top: 0; }
+.cl-product-content p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--cl-text);
+  max-width: 860px;
+}
+.cl-product-content ul {
+  font-size: 15px;
+  line-height: 1.7;
+  padding-left: 20px;
+  max-width: 860px;
+}
+
+/* Specs table (simple key-value like Cookinglife) */
+.cl-specs-table {
+  width: 100%;
+  max-width: 700px;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin: 16px 0 32px;
+}
+.cl-specs-table tr { border-bottom: 1px solid var(--cl-border); }
+.cl-specs-table td {
+  padding: 10px 16px 10px 0;
+  vertical-align: top;
+}
+.cl-specs-table td:first-child {
+  font-weight: 600;
+  color: var(--cl-muted);
+  width: 200px;
+  white-space: nowrap;
+}
+
+/* Brand story section */
+.cl-brand-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+  background: var(--cl-bg-soft);
+  border-radius: var(--cl-radius);
+  padding: 32px;
+  margin: 40px 0;
+}
+.cl-brand-story-img {
+  background: #E8E8E8;
+  border-radius: var(--cl-radius);
+  aspect-ratio: 16/10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+}
+.cl-brand-story h2 {
+  font-size: 22px;
+  margin: 0 0 12px;
+}
+.cl-brand-story p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--cl-muted);
+}
+
+/* "Dit product kun je vinden in" */
+.cl-category-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 16px 0 32px;
+}
+.cl-category-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: 1px solid var(--cl-border);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cl-text);
+  background: #fff;
+  transition: all 0.15s;
+}
+.cl-category-links a:hover {
+  border-color: var(--cl-pink);
+  color: var(--cl-pink);
+  text-decoration: none;
+}
+
+/* Reviews section with star breakdown */
+.cl-reviews-section {
+  margin: 48px 0;
+  border-top: 1px solid var(--cl-border);
+  padding-top: 40px;
+}
+.cl-reviews-summary {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+.cl-reviews-score {
+  text-align: center;
+  min-width: 120px;
+}
+.cl-reviews-score .cl-big-score {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--cl-text);
+}
+.cl-reviews-score .cl-stars { font-size: 18px; }
+.cl-reviews-score .cl-review-count {
+  font-size: 13px;
+  color: var(--cl-muted);
+  margin-top: 4px;
+}
+.cl-star-breakdown {
+  flex: 1;
+  min-width: 240px;
+}
+.cl-star-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+.cl-star-bar .cl-bar-label {
+  width: 50px;
+  text-align: right;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.cl-star-bar .cl-bar-track {
+  flex: 1;
+  height: 10px;
+  background: var(--cl-border);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.cl-star-bar .cl-bar-fill {
+  height: 100%;
+  background: var(--cl-star);
+  border-radius: 5px;
+}
+.cl-star-bar .cl-bar-count {
+  width: 30px;
+  font-size: 12px;
+  color: var(--cl-muted);
+}
+
+/* Individual review card (compact) */
+.cl-user-review {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--cl-border);
+}
+.cl-user-review:last-child { border-bottom: 0; }
+.cl-user-review-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.cl-user-review-head .cl-reviewer {
+  font-weight: 700;
+  font-size: 14px;
+}
+.cl-user-review-head .cl-review-date {
+  font-size: 12px;
+  color: var(--cl-muted);
+}
+.cl-user-review .cl-verified {
+  font-size: 11px;
+  color: var(--cl-green);
+  font-weight: 600;
+}
+.cl-user-review p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 8px 0 0;
+}
+
+/* Cross-sell section */
+.cl-cross-sell {
+  margin: 48px 0;
+  border-top: 1px solid var(--cl-border);
+  padding-top: 32px;
+}
+.cl-cross-sell h2 {
+  font-size: 22px;
+  margin: 0 0 20px;
+}
+
+/* Tips & Recepten section */
+.cl-tips-section {
+  background: var(--cl-bg-soft);
+  padding: 48px 0;
+  margin-top: 48px;
+}
+.cl-tips-section h2 {
+  font-size: 24px;
+  margin: 0 0 20px;
+  text-align: center;
+}
+.cl-tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+.cl-tip-card {
+  background: #fff;
+  border-radius: var(--cl-radius);
+  overflow: hidden;
+  border: 1px solid var(--cl-border);
+  transition: all 0.2s;
+}
+.cl-tip-card:hover { box-shadow: var(--cl-shadow-lg); transform: translateY(-2px); }
+.cl-tip-card-img {
+  aspect-ratio: 16/10;
+  background: var(--cl-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+.cl-tip-card-body {
+  padding: 16px;
+}
+.cl-tip-card-body h3 {
+  font-size: 15px;
+  margin: 0 0 6px;
+  font-weight: 700;
+}
+.cl-tip-card-body p {
+  font-size: 13px;
+  color: var(--cl-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Green topbar variant */
+.cl-topbar-green {
+  background: var(--cl-green);
+}
+
+@media (max-width: 860px) {
+  .cl-product-page { grid-template-columns: 1fr; }
+  .cl-brand-story { grid-template-columns: 1fr; }
+  .cl-header-inner { flex-wrap: wrap; }
+  .cl-search { order: 3; flex-basis: 100%; max-width: none; }
+}
+
+/* ---------- Footer ---------- */
+.cl-footer {
+  background: #1A1A1A;
+  color: #ccc;
+  padding: 48px 0 0;
+  margin-top: 64px;
+  font-size: 14px;
+}
+.cl-footer-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  padding-bottom: 32px;
+}
+.cl-footer h4 {
+  color: #fff;
+  font-size: 15px;
+  margin: 0 0 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.cl-footer ul { list-style: none; padding: 0; margin: 0; }
+.cl-footer li { margin-bottom: 8px; }
+.cl-footer a { color: #ccc; }
+.cl-footer a:hover { color: var(--cl-pink); }
+.cl-footer-bottom {
+  border-top: 1px solid #333;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+}
+.cl-footer-trust {
+  background: #111;
+  padding: 14px 0;
+  text-align: center;
+  font-size: 13px;
+  color: #ccc;
+}
+.cl-footer-trust strong { color: var(--cl-green); }
+
+/* ---------- Blog/article layout ---------- */
+.cl-article {
+  max-width: 860px;
+  margin: 0 auto;
+}
+.cl-article h1 {
+  font-size: 38px;
+  line-height: 1.2;
+  margin: 0 0 16px;
+  letter-spacing: -0.5px;
+}
+.cl-article-meta {
+  display: flex;
+  gap: 16px;
+  color: var(--cl-muted);
+  font-size: 13px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--cl-border);
+  padding-bottom: 20px;
+  flex-wrap: wrap;
+}
+.cl-article-meta strong { color: var(--cl-text); }
+.cl-article p { font-size: 17px; line-height: 1.7; }
+.cl-article h2 { font-size: 26px; margin-top: 36px; }
+.cl-article h3 { font-size: 20px; margin-top: 28px; }
+.cl-article ul, .cl-article ol { font-size: 16px; line-height: 1.7; }
+.cl-article blockquote {
+  border-left: 4px solid var(--cl-pink);
+  padding: 12px 20px;
+  margin: 20px 0;
+  font-style: italic;
+  color: var(--cl-text);
+  background: var(--cl-bg-soft);
+  border-radius: 0 6px 6px 0;
+}
+
+.cl-author-box {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  background: var(--cl-bg-soft);
+  border: 1px solid var(--cl-border);
+  border-radius: var(--cl-radius);
+  padding: 20px;
+  margin: 32px 0;
+}
+.cl-author-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--cl-pink);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.cl-author-box .cl-author-name { font-weight: 700; color: var(--cl-text); }
+.cl-author-box .cl-author-title { font-size: 13px; color: var(--cl-muted); }
+
+/* ---------- TL;DR & Review cards ---------- */
+.cl-tldr {
+  background: linear-gradient(135deg, #FFF4F8 0%, #F0FBE6 100%);
+  border: 1px solid var(--cl-border);
+  border-radius: var(--cl-radius);
+  padding: 24px;
+  margin: 24px 0 32px;
+}
+.cl-tldr h3 {
+  margin-top: 0;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--cl-pink);
+}
+.cl-tldr dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 12px 0 0;
+}
+.cl-tldr dt {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--cl-muted);
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+.cl-tldr dd {
+  margin: 4px 0 0;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.cl-review-card {
+  background: #fff;
+  border: 1px solid var(--cl-border);
+  border-radius: var(--cl-radius);
+  padding: 24px;
+  margin: 24px 0;
+  position: relative;
+}
+.cl-review-card .cl-review-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  border-bottom: 1px solid var(--cl-border);
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.cl-review-card h3 { margin: 0 0 4px; font-size: 20px; }
+.cl-review-card .cl-score {
+  background: var(--cl-pink);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 22px;
+  font-weight: 800;
+  min-width: 72px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.cl-review-card .cl-score small { font-size: 11px; display: block; font-weight: 500; opacity: 0.9; }
+.cl-proscons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 12px 0;
+}
+.cl-proscons ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+.cl-proscons li { padding: 4px 0 4px 22px; position: relative; }
+.cl-proscons .cl-pros li::before {
+  content: "+";
+  position: absolute;
+  left: 0;
+  color: var(--cl-green);
+  font-weight: 900;
+}
+.cl-proscons .cl-cons li::before {
+  content: "−";
+  position: absolute;
+  left: 0;
+  color: var(--cl-pink);
+  font-weight: 900;
+}
+@media (max-width: 640px) {
+  .cl-proscons { grid-template-columns: 1fr; }
+}
+
+/* ---------- Concept cards (landing) ---------- */
+.cl-concept-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin: 32px 0;
+}
+.cl-concept-card {
+  background: #fff;
+  border: 1px solid var(--cl-border);
+  border-radius: var(--cl-radius);
+  padding: 28px;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+.cl-concept-card:hover {
+  box-shadow: var(--cl-shadow-lg);
+  transform: translateY(-4px);
+  border-color: var(--cl-pink);
+}
+.cl-concept-card .cl-concept-num {
+  display: inline-block;
+  background: var(--cl-pink);
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 36px;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+.cl-concept-card h3 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+.cl-concept-card p { font-size: 14px; color: var(--cl-muted); flex: 1; }
+.cl-concept-card .cl-concept-why {
+  background: var(--cl-bg-soft);
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 14px 0;
+  font-size: 12px;
+  color: var(--cl-text);
+}
+
+/* ---------- Hero ---------- */
+.cl-hero {
+  background: linear-gradient(135deg, #FFF4F8 0%, #F0FBE6 100%);
+  padding: 64px 0;
+  border-bottom: 1px solid var(--cl-border);
+}
+.cl-hero h1 {
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin: 0 0 16px;
+  max-width: 760px;
+  line-height: 1.1;
+}
+.cl-hero p {
+  font-size: 18px;
+  max-width: 680px;
+  color: var(--cl-muted);
+  margin: 0 0 24px;
+}
+
+/* ---------- Check list ---------- */
+.cl-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 8px 24px;
+}
+.cl-checklist li {
+  padding: 8px 0 8px 28px;
+  position: relative;
+  font-size: 14px;
+  border-bottom: 1px solid var(--cl-border);
+}
+.cl-checklist li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  color: var(--cl-green);
+  font-weight: 900;
+  font-size: 16px;
+}
+
+/* ---------- Cite inline ---------- */
+cite {
+  font-style: normal;
+  font-size: 11px;
+  vertical-align: super;
+  color: var(--cl-pink);
+  font-weight: 700;
+  margin-left: 2px;
+}
+cite a { color: var(--cl-pink); }
