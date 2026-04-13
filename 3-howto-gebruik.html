@@ -268,6 +268,45 @@
       </ol>
     </div>
 
+    <!-- ======================= IMPLEMENTATIE-INSTRUCTIE ======================= -->
+    <div class="cl-impl-box">
+      <h3>Waar moet dit op cookinglife.nl?</h3>
+
+      <p><strong>HowTo-stappenplannen horen in de bestaande <code>/pages/how-to/</code> sectie.</strong> Cookinglife heeft hier al 10+ gidsen staan (o.a. fondue, snijplank onderhoud, inductie-adapter). Dit is de perfecte plek om uit te breiden met product-gerelateerde instructies.</p>
+
+      <div class="cl-impl-where">
+        <div class="cl-impl-where-card">
+          <strong>How-To hub (primair)</strong>
+          <span>Voeg nieuwe HowTo-pagina's toe aan de bestaande how-to sectie. Cookinglife heeft hier al een goed fundament.</span>
+          <code>/pages/how-to/gietijzeren-pan-inbranden</code>
+          <code>/pages/how-to/messen-slijpen</code>
+          <code>/pages/how-to/pannen-schoonmaken</code>
+        </div>
+        <div class="cl-impl-where-card">
+          <strong>Productpagina's (cross-link)</strong>
+          <span>Link vanuit relevante productpagina's naar de HowTo-gids. Bijv. bij elke gietijzeren pan: "Lees: Hoe brand je deze pan in?"</span>
+          <code>/products/skeppshult-koekenpan → link</code>
+        </div>
+        <div class="cl-impl-where-card">
+          <strong>Blog (traffic-builder)</strong>
+          <span>Publiceer seizoenstips als blogpost die linkt naar de how-to pagina en producten.</span>
+          <code>/blogs/news/pannen-onderhoud-tips</code>
+        </div>
+      </div>
+
+      <h3>Stap-voor-stap implementatie</h3>
+      <ol class="cl-impl-steps">
+        <li><strong>Identificeer de top-20 "hoe moet ik...?" vragen</strong> van klanten. Check klantenservice, Google Search Console ("hoe" queries) en reviews voor veelvoorkomende onderhoudsvragen.</li>
+        <li><strong>Schrijf per vraag een HowTo-pagina</strong> met genummerde stappen, tijdsindicatie, benodigdheden en veelgemaakte fouten. Gebruik de structuur van deze demo als template.</li>
+        <li><strong>Publiceer op <code>/pages/how-to/[slug]</code></strong> — dit past in het bestaande Cookinglife URL-patroon en wordt automatisch opgenomen in de sitemap.</li>
+        <li><strong>Voeg <code>HowTo</code> JSON-LD toe</strong> met steps, tools, supplies en totalTime. Dit verschijnt in Google AI Overviews als instructie-snippet.</li>
+        <li><strong>Cross-link naar producten:</strong> voeg onderaan elke HowTo een "Producten die je nodig hebt" blok toe met links naar de Cookinglife-producten. Dit verhoogt conversie én interne linkwaarde.</li>
+        <li><strong>Link terug vanuit productpagina's:</strong> voeg op relevante productpagina's een "Hoe gebruik je dit product?" link toe naar de bijbehorende HowTo-gids.</li>
+      </ol>
+
+      <p><span class="cl-impl-priority medium">Middenhoge prioriteit</span> — HowTo's zijn uitermate krachtig voor "hoe moet ik...?" AI-queries en bouwen autoriteit op. Cookinglife heeft hier al een voorsprong met de bestaande <code>/pages/how-to/</code> sectie.</p>
+    </div>
+
     <p style="text-align:center;margin:48px 0;">
       <a href="index.html" class="cl-btn cl-btn-outline">← Terug naar overzicht concepten</a>
     </p>

@@ -322,6 +322,45 @@
     </ol>
   </div>
 
+  <!-- ======================= IMPLEMENTATIE-INSTRUCTIE ======================= -->
+  <div class="cl-impl-box">
+    <h3>Waar moet dit op cookinglife.nl?</h3>
+
+    <p><strong>FAQ-secties horen direct op productpagina's.</strong> Cookinglife heeft 15.000+ producten op <code>/products/[slug]</code>. Door een FAQ-accordion toe te voegen onder de productomschrijving, wordt elke productpagina een potentiële AI-bron.</p>
+
+    <div class="cl-impl-where">
+      <div class="cl-impl-where-card">
+        <strong>Productpagina's (primair)</strong>
+        <span>Voeg een FAQ-sectie toe onder de productomschrijving op elke productpagina. Start met de top-100 bestsellers.</span>
+        <code>/products/le-creuset-braadpan-...</code>
+        <code>/products/wusthof-koksmes-...</code>
+      </div>
+      <div class="cl-impl-where-card">
+        <strong>Collectiepagina's (secundair)</strong>
+        <span>Voeg categorie-brede FAQ toe aan collecties, bijv. "Veelgestelde vragen over braadpannen".</span>
+        <code>/collections/braadpannen</code>
+        <code>/collections/messensets</code>
+      </div>
+      <div class="cl-impl-where-card">
+        <strong>Klantenservice-pagina's</strong>
+        <span>Bestaande klantenservice-content omzetten naar FAQ-schema zodat het ook via AI gevonden wordt.</span>
+        <code>/pages/veelgestelde-vragen</code>
+      </div>
+    </div>
+
+    <h3>Stap-voor-stap implementatie</h3>
+    <ol class="cl-impl-steps">
+      <li><strong>Identificeer de top-100 producten</strong> op basis van verkoop en zoekvolume. Begin met producten die al veel klantvragen genereren (check klantenservice-tickets).</li>
+      <li><strong>Schrijf per product 5-10 FAQ's</strong> met het antwoord in de eerste zin. Gebruik echte klantvragen als basis — check reviews en klantenservice-data.</li>
+      <li><strong>Implementeer in Shopify als collapsible content block</strong> in het producttemplate. De Shopify Dawn-thema heeft native ondersteuning voor accordion-secties.</li>
+      <li><strong>Voeg <code>FAQPage</code> JSON-LD toe</strong> via een Shopify-sectie of app (bijv. SEO Manager, JSON-LD for SEO). Dit moet automatisch gegenereerd worden per product.</li>
+      <li><strong>Gebruik <code>&lt;details&gt;</code>/<code>&lt;summary&gt;</code> HTML</strong> — dit is native accessible en wordt door AI-crawlers herkend als Q&A-structuur.</li>
+      <li><strong>Schaal op naar alle producten</strong> met een template-systeem: maak per productcategorie een FAQ-template met standaardvragen (inductie, vaatwasser, garantie, maten) die je per product invult.</li>
+    </ol>
+
+    <p><span class="cl-impl-priority high">Hoge prioriteit</span> — FAQ's op productpagina's zijn de snelste manier om in AI-antwoorden te verschijnen bij "Is [product] geschikt voor...?" vragen.</p>
+  </div>
+
   <p style="text-align:center;margin:48px 0;">
     <a href="index.html" class="cl-btn cl-btn-outline">← Terug naar overzicht concepten</a>
   </p>
