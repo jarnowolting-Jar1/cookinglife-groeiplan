@@ -1,0 +1,729 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SparkLayer B2B Portal Demo — Cookinglife Kinderopvang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* ================================================================
+       SparkLayer-style B2B Portal — matched to real SparkLayer UI
+       Purple primary, Poppins headers, Roboto body, clean white
+       ================================================================ */
+    :root {
+      --sl-purple: #5b36f5;
+      --sl-purple-hover: #4826d4;
+      --sl-purple-light: #ede9fe;
+      --sl-purple-bg: #f5f3ff;
+      --sl-dark: #1a1a2e;
+      --sl-text: #374151;
+      --sl-text-light: #6b7280;
+      --sl-border: #e5e7eb;
+      --sl-bg: #ffffff;
+      --sl-bg-soft: #f9fafb;
+      --sl-green: #10b981;
+      --sl-green-bg: #d1fae5;
+      --sl-green-text: #065f46;
+      --sl-orange: #f59e0b;
+      --sl-orange-bg: #fef3c7;
+      --sl-orange-text: #92400e;
+      --sl-blue: #3b82f6;
+      --sl-blue-bg: #dbeafe;
+      --sl-blue-text: #1e40af;
+      --sl-red: #ef4444;
+      --sl-pink: #DD195A;
+      --sl-radius: 8px;
+      --sl-radius-lg: 12px;
+      --sl-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      --sl-shadow-lg: 0 4px 16px rgba(0,0,0,0.1);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Roboto', -apple-system, sans-serif; color: var(--sl-text); background: var(--sl-bg); font-size: 14px; line-height: 1.5; }
+    h1,h2,h3,h4,h5 { font-family: 'Poppins', sans-serif; font-weight: 600; color: var(--sl-dark); }
+    a { color: var(--sl-purple); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ---- Demo context bar ---- */
+    .sl-demo-bar { background: var(--sl-dark); color: #94a3b8; font-size: 12px; padding: 6px 20px; display: flex; justify-content: space-between; align-items: center; }
+    .sl-demo-bar strong { color: #fff; }
+    .sl-demo-pill { background: var(--sl-purple); color: #fff; font-size: 9px; font-weight: 700; padding: 2px 8px; border-radius: 99px; margin-left: 6px; letter-spacing: 0.5px; text-transform: uppercase; }
+
+    /* ---- Announcement bar (Cookinglife) ---- */
+    .sl-announce { background: var(--sl-pink); color: #fff; text-align: center; padding: 8px 16px; font-size: 13px; font-weight: 500; }
+
+    /* ---- Header ---- */
+    .sl-header { background: #fff; border-bottom: 1px solid var(--sl-border); padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .sl-header-logo { font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 700; color: var(--sl-dark); }
+    .sl-header-logo span { color: var(--sl-pink); }
+    .sl-header-logo small { display: block; font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sl-text-light); }
+    .sl-header-search { flex: 1; max-width: 420px; margin: 0 32px; position: relative; }
+    .sl-header-search input { width: 100%; padding: 9px 14px 9px 36px; border: 1px solid var(--sl-border); border-radius: 6px; font-size: 13px; background: var(--sl-bg-soft); }
+    .sl-header-search input:focus { outline: none; border-color: var(--sl-purple); box-shadow: 0 0 0 3px var(--sl-purple-light); }
+    .sl-header-search::before { content: '🔍'; position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font-size: 13px; }
+    .sl-header-icons { display: flex; gap: 20px; align-items: center; font-size: 13px; color: var(--sl-text-light); }
+    .sl-header-icons a { color: var(--sl-text-light); display: flex; align-items: center; gap: 4px; }
+    .sl-header-icons a:hover { color: var(--sl-purple); text-decoration: none; }
+    .sl-cart-badge { background: var(--sl-purple); color: #fff; font-size: 10px; font-weight: 700; min-width: 18px; height: 18px; border-radius: 99px; display: inline-flex; align-items: center; justify-content: center; }
+
+    /* ---- B2B Account Bar (SparkLayer overlay) ---- */
+    .sl-b2b-bar { background: var(--sl-purple-bg); border-bottom: 1px solid var(--sl-purple-light); padding: 10px 24px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
+    .sl-b2b-bar .sl-company { font-weight: 600; color: var(--sl-dark); }
+    .sl-b2b-bar .sl-tier { background: var(--sl-purple); color: #fff; font-size: 11px; font-weight: 600; padding: 2px 10px; border-radius: 99px; margin-left: 8px; }
+    .sl-b2b-links { display: flex; gap: 16px; }
+    .sl-b2b-links a { color: var(--sl-purple); font-weight: 500; font-size: 13px; }
+
+    /* ---- Main container ---- */
+    .sl-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .sl-main { padding: 24px 0 64px; }
+
+    /* ---- Tabs (SparkLayer My Account style) ---- */
+    .sl-tabs { display: flex; gap: 0; border-bottom: 2px solid var(--sl-border); margin-bottom: 28px; overflow-x: auto; }
+    .sl-tab { padding: 12px 18px; font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 500; color: var(--sl-text-light); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; white-space: nowrap; transition: all 0.15s; }
+    .sl-tab:hover { color: var(--sl-dark); }
+    .sl-tab.active { color: var(--sl-purple); border-bottom-color: var(--sl-purple); font-weight: 600; }
+
+    /* ---- Panels ---- */
+    .sl-panel { display: none; }
+    .sl-panel.active { display: block; }
+
+    /* ---- Stats row ---- */
+    .sl-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 28px; }
+    .sl-stat-card { background: #fff; border: 1px solid var(--sl-border); border-radius: var(--sl-radius); padding: 16px 20px; }
+    .sl-stat-card .sl-stat-label { font-size: 12px; color: var(--sl-text-light); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 500; }
+    .sl-stat-card .sl-stat-value { font-family: 'Poppins', sans-serif; font-size: 26px; font-weight: 700; margin-top: 4px; }
+
+    /* ---- Product Table (SparkLayer quick-buy / matrix style) ---- */
+    .sl-product-table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--sl-border); border-radius: var(--sl-radius); overflow: hidden; }
+    .sl-product-table thead th { background: var(--sl-bg-soft); padding: 10px 14px; text-align: left; font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--sl-text-light); border-bottom: 1px solid var(--sl-border); }
+    .sl-product-table tbody td { padding: 12px 14px; border-bottom: 1px solid var(--sl-border); vertical-align: middle; }
+    .sl-product-table tbody tr:hover { background: var(--sl-bg-soft); }
+    .sl-product-table .sl-prod-name { font-weight: 500; color: var(--sl-dark); }
+    .sl-product-table .sl-prod-sku { font-size: 12px; color: var(--sl-text-light); font-family: monospace; }
+    .sl-product-table .sl-price-retail { font-size: 12px; color: var(--sl-text-light); text-decoration: line-through; }
+    .sl-product-table .sl-price-b2b { font-weight: 700; color: var(--sl-dark); font-size: 15px; }
+    .sl-product-table .sl-price-save { font-size: 11px; font-weight: 600; color: var(--sl-green-text); background: var(--sl-green-bg); padding: 1px 6px; border-radius: 3px; }
+    .sl-product-table .sl-tier-info { font-size: 11px; color: var(--sl-purple); }
+
+    /* Quantity input (SparkLayer style) */
+    .sl-qty-wrap { display: inline-flex; align-items: center; border: 1px solid var(--sl-border); border-radius: 6px; overflow: hidden; }
+    .sl-qty-btn { width: 32px; height: 32px; border: none; background: var(--sl-bg-soft); cursor: pointer; font-size: 16px; color: var(--sl-text-light); display: flex; align-items: center; justify-content: center; }
+    .sl-qty-btn:hover { background: var(--sl-purple-light); color: var(--sl-purple); }
+    .sl-qty-input { width: 44px; height: 32px; border: none; border-left: 1px solid var(--sl-border); border-right: 1px solid var(--sl-border); text-align: center; font-size: 13px; font-weight: 600; font-family: 'Roboto', sans-serif; }
+    .sl-qty-input:focus { outline: none; }
+
+    /* Add to order button (SparkLayer purple) */
+    .sl-btn-add { background: var(--sl-purple); color: #fff; border: none; padding: 7px 16px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer; font-family: 'Poppins', sans-serif; transition: background 0.15s; }
+    .sl-btn-add:hover { background: var(--sl-purple-hover); }
+    .sl-btn-add.added { background: var(--sl-green); }
+
+    /* ---- Shopping List ---- */
+    .sl-list-card { background: #fff; border: 1px solid var(--sl-border); border-radius: var(--sl-radius); padding: 20px; margin-bottom: 16px; }
+    .sl-list-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .sl-list-header h4 { margin: 0; font-size: 15px; }
+    .sl-list-items { font-size: 13px; color: var(--sl-text-light); }
+
+    /* ---- Order History ---- */
+    .sl-order-table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--sl-border); border-radius: var(--sl-radius); overflow: hidden; }
+    .sl-order-table thead th { background: var(--sl-bg-soft); padding: 10px 14px; text-align: left; font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--sl-text-light); border-bottom: 1px solid var(--sl-border); }
+    .sl-order-table tbody td { padding: 12px 14px; border-bottom: 1px solid var(--sl-border); font-size: 13px; }
+    .sl-order-table tbody tr:hover { background: var(--sl-bg-soft); }
+    .sl-status { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 99px; }
+    .sl-status-delivered { background: var(--sl-green-bg); color: var(--sl-green-text); }
+    .sl-status-shipped { background: var(--sl-blue-bg); color: var(--sl-blue-text); }
+    .sl-status-processing { background: var(--sl-orange-bg); color: var(--sl-orange-text); }
+
+    /* ---- Cart Sidebar ---- */
+    .sl-cart-panel { background: #fff; border: 1px solid var(--sl-border); border-radius: var(--sl-radius-lg); padding: 24px; margin-top: 24px; }
+    .sl-cart-panel h3 { font-size: 16px; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .sl-cart-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--sl-border); font-size: 13px; }
+    .sl-cart-item:last-child { border-bottom: none; }
+    .sl-cart-item .ci-name { font-weight: 500; }
+    .sl-cart-item .ci-qty { color: var(--sl-text-light); }
+    .sl-cart-item .ci-price { font-weight: 600; }
+    .sl-cart-total { display: flex; justify-content: space-between; padding: 16px 0 0; border-top: 2px solid var(--sl-dark); margin-top: 8px; font-family: 'Poppins', sans-serif; }
+    .sl-cart-total .ct-label { font-weight: 600; font-size: 14px; }
+    .sl-cart-total .ct-value { font-weight: 700; font-size: 18px; }
+    .sl-cart-note { font-size: 12px; color: var(--sl-text-light); margin-top: 4px; }
+    .sl-btn-checkout { display: block; width: 100%; padding: 12px; background: var(--sl-purple); color: #fff; border: none; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; margin-top: 16px; text-align: center; transition: background 0.15s; }
+    .sl-btn-checkout:hover { background: var(--sl-purple-hover); }
+
+    /* ---- Pricing tiers box ---- */
+    .sl-tiers-box { background: var(--sl-purple-bg); border: 1px solid var(--sl-purple-light); border-radius: var(--sl-radius); padding: 16px 20px; margin-top: 20px; }
+    .sl-tiers-box h4 { font-size: 13px; color: var(--sl-purple); margin-bottom: 8px; }
+    .sl-tiers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .sl-tier-card { background: #fff; border-radius: 6px; padding: 10px; text-align: center; }
+    .sl-tier-card .tier-qty { font-size: 11px; color: var(--sl-text-light); font-weight: 500; }
+    .sl-tier-card .tier-disc { font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 700; color: var(--sl-purple); }
+
+    /* ---- Locations ---- */
+    .sl-loc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+    .sl-loc-card { background: #fff; border: 1px solid var(--sl-border); border-radius: var(--sl-radius); padding: 20px; }
+    .sl-loc-card.default { border-color: var(--sl-purple); border-width: 2px; }
+    .sl-loc-badge { font-size: 10px; font-weight: 700; color: var(--sl-purple); text-transform: uppercase; letter-spacing: 0.5px; }
+    .sl-loc-card h4 { margin: 4px 0; font-size: 16px; }
+    .sl-loc-addr { font-size: 13px; color: var(--sl-text-light); margin-bottom: 12px; }
+    .sl-loc-meta { font-size: 13px; line-height: 1.8; }
+    .sl-btn-outline { display: inline-block; padding: 7px 16px; border: 1px solid var(--sl-purple); color: var(--sl-purple); border-radius: 6px; font-size: 12px; font-weight: 600; font-family: 'Poppins', sans-serif; cursor: pointer; margin-top: 12px; background: transparent; }
+    .sl-btn-outline:hover { background: var(--sl-purple-bg); text-decoration: none; }
+
+    /* ---- Login overlay ---- */
+    .sl-login-wrap { max-width: 420px; margin: 48px auto; }
+    .sl-login-card { background: #fff; border: 1px solid var(--sl-border); border-radius: var(--sl-radius-lg); padding: 40px; box-shadow: var(--sl-shadow-lg); }
+    .sl-login-card h2 { text-align: center; margin-bottom: 4px; }
+    .sl-login-card .sl-login-sub { text-align: center; color: var(--sl-text-light); font-size: 14px; margin-bottom: 24px; }
+    .sl-login-field { display: block; width: 100%; padding: 10px 14px; border: 1px solid var(--sl-border); border-radius: 6px; font-size: 14px; font-family: 'Roboto', sans-serif; margin-bottom: 12px; }
+    .sl-login-field:focus { outline: none; border-color: var(--sl-purple); box-shadow: 0 0 0 3px var(--sl-purple-light); }
+    .sl-login-btn { display: block; width: 100%; padding: 12px; background: var(--sl-purple); color: #fff; border: none; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; }
+    .sl-login-btn:hover { background: var(--sl-purple-hover); }
+    .sl-login-note { text-align: center; font-size: 12px; color: var(--sl-text-light); margin-top: 16px; }
+    .sl-login-powered { text-align: center; margin-top: 20px; font-size: 11px; color: var(--sl-text-light); }
+    .sl-login-powered img { height: 16px; vertical-align: middle; }
+
+    /* ---- Footer demo note ---- */
+    .sl-footer-note { background: var(--sl-bg-soft); border-top: 1px solid var(--sl-border); padding: 32px 24px; text-align: center; font-size: 13px; color: var(--sl-text-light); }
+    .sl-footer-note a { font-weight: 600; }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 768px) {
+      .sl-stats { grid-template-columns: repeat(2, 1fr); }
+      .sl-header { flex-wrap: wrap; gap: 12px; }
+      .sl-header-search { order: 3; max-width: 100%; margin: 0; }
+      .sl-tiers-grid { grid-template-columns: repeat(2, 1fr); }
+      .sl-b2b-bar { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== DEMO BAR ===== -->
+<div class="sl-demo-bar">
+  <div><strong>SparkLayer</strong> B2B Portal — Cookinglife Demo <span class="sl-demo-pill">Demo</span></div>
+  <div>Interactieve mockup · geen live installatie</div>
+</div>
+
+<!-- ===== ANNOUNCEMENT BAR (Cookinglife style) ===== -->
+<div class="sl-announce">
+  B2B Kinderopvang — Gratis verzending vanaf € 250,- &nbsp;·&nbsp; Staffelkortingen automatisch berekend
+</div>
+
+<!-- ===== HEADER ===== -->
+<header class="sl-header">
+  <a href="index.html" style="text-decoration:none;">
+    <div class="sl-header-logo">cooking<span>life</span><small>B2B &middot; Kinderopvang &middot; Zakelijk</small></div>
+  </a>
+  <div class="sl-header-search">
+    <input type="text" placeholder="Zoek op productnaam, SKU of artikelnummer...">
+  </div>
+  <div class="sl-header-icons">
+    <a href="#" onclick="return false">📋 Bestellijsten</a>
+    <a href="#" onclick="return false">👤 Account</a>
+    <a href="#" onclick="return false">🛒 <span class="sl-cart-badge" id="cart-count">3</span></a>
+  </div>
+</header>
+
+<!-- ===== B2B BAR (SparkLayer overlay) ===== -->
+<div class="sl-b2b-bar" id="b2b-bar">
+  <div>
+    <span class="sl-company">Kinderdagverblijf De Zonnestraal</span>
+    <span class="sl-tier">Kinderopvang Premium</span>
+    &nbsp;·&nbsp; <span style="color:var(--sl-text-light);">Alle prijzen excl. btw</span>
+  </div>
+  <div class="sl-b2b-links">
+    <a href="#" onclick="switchTab('locaties');return false">📍 3 Locaties</a>
+    <a href="#" onclick="switchTab('bestellingen');return false">📦 Bestellingen</a>
+    <a href="#" onclick="return false">📄 Facturen</a>
+    <a href="#" onclick="return false" style="color:var(--sl-text-light);">Uitloggen</a>
+  </div>
+</div>
+
+<!-- ===== MAIN ===== -->
+<div class="sl-container sl-main">
+
+  <!-- Stats -->
+  <div class="sl-stats">
+    <div class="sl-stat-card">
+      <div class="sl-stat-label">Uw korting</div>
+      <div class="sl-stat-value" style="color:var(--sl-purple);">15%</div>
+    </div>
+    <div class="sl-stat-card">
+      <div class="sl-stat-label">Besteld dit kwartaal</div>
+      <div class="sl-stat-value">€ 2.847</div>
+    </div>
+    <div class="sl-stat-card">
+      <div class="sl-stat-label">Locaties</div>
+      <div class="sl-stat-value">3</div>
+    </div>
+    <div class="sl-stat-card">
+      <div class="sl-stat-label">Bestellingen</div>
+      <div class="sl-stat-value">12</div>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="sl-tabs">
+    <div class="sl-tab active" onclick="switchTab('producten')">Producten</div>
+    <div class="sl-tab" onclick="switchTab('quickorder')">Quick Order</div>
+    <div class="sl-tab" onclick="switchTab('lijsten')">Bestellijsten</div>
+    <div class="sl-tab" onclick="switchTab('locaties')">Locaties</div>
+    <div class="sl-tab" onclick="switchTab('bestellingen')">Bestelgeschiedenis</div>
+  </div>
+
+  <!-- ========== PRODUCTEN ========== -->
+  <div class="sl-panel active" id="panel-producten">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+      <div>
+        <h2 style="font-size:18px;margin-bottom:2px;">Kinderopvang Assortiment</h2>
+        <p style="color:var(--sl-text-light);font-size:13px;">6 producten · Uw staffelkorting (15%) is automatisch verwerkt</p>
+      </div>
+      <div style="display:flex;gap:8px;">
+        <select style="padding:6px 10px;border:1px solid var(--sl-border);border-radius:6px;font-size:13px;background:#fff;">
+          <option>Alle categorieën</option>
+          <option>Servies & Borden</option>
+          <option>Bekers</option>
+          <option>Bestek</option>
+          <option>Keukentools</option>
+        </select>
+      </div>
+    </div>
+
+    <table class="sl-product-table">
+      <thead>
+        <tr>
+          <th style="width:36px;"></th>
+          <th>Product</th>
+          <th>SKU</th>
+          <th>Adviesprijs</th>
+          <th>Uw B2B prijs</th>
+          <th>Staffel</th>
+          <th>Aantal</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="font-size:24px;">🍽️</td>
+          <td>
+            <span class="sl-prod-name">Tritan™ Vakjesbord Kinderopvang</span><br>
+            <span class="sl-prod-sku">CL-TV-001</span>
+          </td>
+          <td><span class="sl-prod-sku">CL-TV-001</span></td>
+          <td><span class="sl-price-retail">€ 12,95</span></td>
+          <td><span class="sl-price-b2b">€ 8,95</span> <span class="sl-price-save">-31%</span></td>
+          <td><span class="sl-tier-info">50+ → € 7,50</span></td>
+          <td>
+            <div class="sl-qty-wrap">
+              <button class="sl-qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="sl-qty-input" type="number" value="10" min="1">
+              <button class="sl-qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+          </td>
+          <td><button class="sl-btn-add" onclick="addItem(this)">Toevoegen</button></td>
+        </tr>
+        <tr>
+          <td style="font-size:24px;">🥤</td>
+          <td>
+            <span class="sl-prod-name">Gepersonaliseerde Beker met Naam</span><br>
+            <span class="sl-prod-sku">CL-GB-002</span>
+          </td>
+          <td><span class="sl-prod-sku">CL-GB-002</span></td>
+          <td><span class="sl-price-retail">€ 9,95</span></td>
+          <td><span class="sl-price-b2b">€ 6,50</span> <span class="sl-price-save">-35%</span></td>
+          <td><span class="sl-tier-info">50+ → € 5,25</span></td>
+          <td>
+            <div class="sl-qty-wrap">
+              <button class="sl-qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="sl-qty-input" type="number" value="25" min="1">
+              <button class="sl-qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+          </td>
+          <td><button class="sl-btn-add" onclick="addItem(this)">Toevoegen</button></td>
+        </tr>
+        <tr>
+          <td style="font-size:24px;">🍴</td>
+          <td>
+            <span class="sl-prod-name">Vuistgreep Bestekset 18/10 RVS (3-dlg)</span><br>
+            <span class="sl-prod-sku">CL-VB-003</span>
+          </td>
+          <td><span class="sl-prod-sku">CL-VB-003</span></td>
+          <td><span class="sl-price-retail">€ 14,95</span></td>
+          <td><span class="sl-price-b2b">€ 10,50</span> <span class="sl-price-save">-30%</span></td>
+          <td><span class="sl-tier-info">50+ → € 8,75</span></td>
+          <td>
+            <div class="sl-qty-wrap">
+              <button class="sl-qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="sl-qty-input" type="number" value="25" min="1">
+              <button class="sl-qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+          </td>
+          <td><button class="sl-btn-add" onclick="addItem(this)">Toevoegen</button></td>
+        </tr>
+        <tr>
+          <td style="font-size:24px;">🔪</td>
+          <td>
+            <span class="sl-prod-name">Kindveilig Fruitsnijmesje (set van 3)</span><br>
+            <span class="sl-prod-sku">CL-FM-004</span>
+          </td>
+          <td><span class="sl-prod-sku">CL-FM-004</span></td>
+          <td><span class="sl-price-retail">€ 11,95</span></td>
+          <td><span class="sl-price-b2b">€ 8,25</span> <span class="sl-price-save">-31%</span></td>
+          <td><span class="sl-tier-info">20+ → € 6,95</span></td>
+          <td>
+            <div class="sl-qty-wrap">
+              <button class="sl-qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="sl-qty-input" type="number" value="5" min="1">
+              <button class="sl-qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+          </td>
+          <td><button class="sl-btn-add" onclick="addItem(this)">Toevoegen</button></td>
+        </tr>
+        <tr>
+          <td style="font-size:24px;">🌡️</td>
+          <td>
+            <span class="sl-prod-name">HACCP Temperatuurmeter Voedseltransport</span><br>
+            <span class="sl-prod-sku">CL-HT-005</span>
+          </td>
+          <td><span class="sl-prod-sku">CL-HT-005</span></td>
+          <td><span class="sl-price-retail">€ 24,95</span></td>
+          <td><span class="sl-price-b2b">€ 18,50</span> <span class="sl-price-save">-26%</span></td>
+          <td><span class="sl-tier-info">5+ → € 15,95</span></td>
+          <td>
+            <div class="sl-qty-wrap">
+              <button class="sl-qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="sl-qty-input" type="number" value="3" min="1">
+              <button class="sl-qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+          </td>
+          <td><button class="sl-btn-add" onclick="addItem(this)">Toevoegen</button></td>
+        </tr>
+        <tr>
+          <td style="font-size:24px;">🧊</td>
+          <td>
+            <span class="sl-prod-name">Geïsoleerde Maaltijdcontainer 10L</span><br>
+            <span class="sl-prod-sku">CL-MC-006</span>
+          </td>
+          <td><span class="sl-prod-sku">CL-MC-006</span></td>
+          <td><span class="sl-price-retail">€ 49,95</span></td>
+          <td><span class="sl-price-b2b">€ 37,50</span> <span class="sl-price-save">-25%</span></td>
+          <td><span class="sl-tier-info">3+ → € 32,50</span></td>
+          <td>
+            <div class="sl-qty-wrap">
+              <button class="sl-qty-btn" onclick="changeQty(this,-1)">−</button>
+              <input class="sl-qty-input" type="number" value="3" min="1">
+              <button class="sl-qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+          </td>
+          <td><button class="sl-btn-add" onclick="addItem(this)">Toevoegen</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Pricing tiers -->
+    <div class="sl-tiers-box">
+      <h4>📊 Uw staffelkortingen — Kinderopvang Premium</h4>
+      <div class="sl-tiers-grid">
+        <div class="sl-tier-card">
+          <div class="tier-qty">1 – 9 stuks</div>
+          <div class="tier-disc">10%</div>
+        </div>
+        <div class="sl-tier-card" style="border:2px solid var(--sl-purple);">
+          <div class="tier-qty">10 – 49 stuks</div>
+          <div class="tier-disc">15%</div>
+          <div style="font-size:10px;color:var(--sl-purple);font-weight:600;">HUIDIG</div>
+        </div>
+        <div class="sl-tier-card">
+          <div class="tier-qty">50 – 99 stuks</div>
+          <div class="tier-disc">20%</div>
+        </div>
+        <div class="sl-tier-card">
+          <div class="tier-qty">100+ stuks</div>
+          <div class="tier-disc">25%</div>
+          <div style="font-size:10px;color:var(--sl-green-text);">+ gratis personalisatie</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cart -->
+    <div class="sl-cart-panel" id="sl-cart">
+      <h3>🛒 Huidige bestelling</h3>
+      <div style="font-size:12px;color:var(--sl-text-light);margin:-8px 0 16px;">Verzendadres: <strong style="color:var(--sl-dark);">Vestiging Centrum</strong> — Herestraat 45, Groningen</div>
+      <div id="cart-items">
+        <div class="sl-cart-item"><div><span class="ci-name">Tritan™ Vakjesbord</span> <span class="ci-qty">× 10</span></div><span class="ci-price">€ 89,50</span></div>
+        <div class="sl-cart-item"><div><span class="ci-name">Gepersonaliseerde Beker</span> <span class="ci-qty">× 25</span></div><span class="ci-price">€ 162,50</span></div>
+        <div class="sl-cart-item"><div><span class="ci-name">Vuistgreep Bestekset</span> <span class="ci-qty">× 25</span></div><span class="ci-price">€ 262,50</span></div>
+      </div>
+      <div class="sl-cart-total">
+        <span class="ct-label">Totaal excl. btw</span>
+        <span class="ct-value" id="cart-total">€ 514,50</span>
+      </div>
+      <div class="sl-cart-note">Btw 21% wordt berekend bij afrekenen · Gratis verzending (boven € 250,-)</div>
+      <button class="sl-btn-checkout">Bestelling plaatsen →</button>
+    </div>
+  </div>
+
+  <!-- ========== QUICK ORDER ========== -->
+  <div class="sl-panel" id="panel-quickorder">
+    <h2 style="font-size:18px;margin-bottom:4px;">Quick Order — Herbestelling</h2>
+    <p style="color:var(--sl-text-light);margin-bottom:20px;">Snel herbestellen op basis van je vorige orders. Pas aantallen aan en voeg alles toe met één klik.</p>
+
+    <div style="background:var(--sl-green-bg);border-radius:var(--sl-radius);padding:12px 16px;margin-bottom:20px;font-size:13px;color:var(--sl-green-text);">
+      <strong>💡 Tip:</strong> Sla veelbestelde producten op als "Bestellijst" om volgende keer met één klik te herbestellen.
+    </div>
+
+    <table class="sl-product-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>SKU</th>
+          <th>B2B Prijs</th>
+          <th>Laatste bestelling</th>
+          <th>Aantal</th>
+          <th>Subtotaal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="sl-prod-name">Tritan™ Vakjesbord</span></td>
+          <td><span class="sl-prod-sku">CL-TV-001</span></td>
+          <td>€ 8,95</td>
+          <td style="color:var(--sl-text-light);">15 mrt 2026 (10×)</td>
+          <td><div class="sl-qty-wrap"><button class="sl-qty-btn" onclick="changeQty(this,-1)">−</button><input class="sl-qty-input" type="number" value="10" min="0"><button class="sl-qty-btn" onclick="changeQty(this,1)">+</button></div></td>
+          <td><strong>€ 89,50</strong></td>
+        </tr>
+        <tr>
+          <td><span class="sl-prod-name">Gepersonaliseerde Beker</span></td>
+          <td><span class="sl-prod-sku">CL-GB-002</span></td>
+          <td>€ 6,50</td>
+          <td style="color:var(--sl-text-light);">15 mrt 2026 (25×)</td>
+          <td><div class="sl-qty-wrap"><button class="sl-qty-btn" onclick="changeQty(this,-1)">−</button><input class="sl-qty-input" type="number" value="25" min="0"><button class="sl-qty-btn" onclick="changeQty(this,1)">+</button></div></td>
+          <td><strong>€ 162,50</strong></td>
+        </tr>
+        <tr>
+          <td><span class="sl-prod-name">Vuistgreep Bestekset 3-dlg</span></td>
+          <td><span class="sl-prod-sku">CL-VB-003</span></td>
+          <td>€ 10,50</td>
+          <td style="color:var(--sl-text-light);">15 mrt 2026 (25×)</td>
+          <td><div class="sl-qty-wrap"><button class="sl-qty-btn" onclick="changeQty(this,-1)">−</button><input class="sl-qty-input" type="number" value="25" min="0"><button class="sl-qty-btn" onclick="changeQty(this,1)">+</button></div></td>
+          <td><strong>€ 262,50</strong></td>
+        </tr>
+        <tr>
+          <td><span class="sl-prod-name">Fruitsnijmesje set (3)</span></td>
+          <td><span class="sl-prod-sku">CL-FM-004</span></td>
+          <td>€ 8,25</td>
+          <td style="color:var(--sl-text-light);">1 feb 2026 (3×)</td>
+          <td><div class="sl-qty-wrap"><button class="sl-qty-btn" onclick="changeQty(this,-1)">−</button><input class="sl-qty-input" type="number" value="5" min="0"><button class="sl-qty-btn" onclick="changeQty(this,1)">+</button></div></td>
+          <td><strong>€ 41,25</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:20px;padding-top:20px;border-top:2px solid var(--sl-border);">
+      <div>
+        <span style="font-family:'Poppins',sans-serif;font-size:18px;font-weight:700;">Totaal: € 555,75</span><br>
+        <span style="font-size:12px;color:var(--sl-text-light);">Excl. btw · Gratis verzending</span>
+      </div>
+      <div style="display:flex;gap:8px;">
+        <button class="sl-btn-outline">Opslaan als bestellijst</button>
+        <button class="sl-btn-checkout" style="width:auto;margin:0;padding:10px 24px;">Alles toevoegen →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== BESTELLIJSTEN ========== -->
+  <div class="sl-panel" id="panel-lijsten">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+      <div>
+        <h2 style="font-size:18px;margin-bottom:2px;">Bestellijsten</h2>
+        <p style="color:var(--sl-text-light);">Bewaar veelbestelde producten en herbestel met één klik.</p>
+      </div>
+      <button class="sl-btn-add" style="padding:8px 20px;">+ Nieuwe lijst</button>
+    </div>
+
+    <div class="sl-list-card" style="border-left:3px solid var(--sl-purple);">
+      <div class="sl-list-header">
+        <h4>⭐ Standaard bestelling — Vestiging Centrum</h4>
+        <div style="display:flex;gap:8px;">
+          <button class="sl-btn-add" style="padding:6px 14px;">Herbestellen →</button>
+          <button class="sl-btn-outline" style="margin:0;padding:6px 14px;">Bewerken</button>
+        </div>
+      </div>
+      <div class="sl-list-items">10× Tritan Vakjesbord · 25× Beker met Naam · 25× Bestekset · 5× Fruitsnijmesje</div>
+      <div style="margin-top:8px;font-size:12px;color:var(--sl-text-light);">Laatst besteld: 15 maart 2026 · Totaal: € 555,75</div>
+    </div>
+
+    <div class="sl-list-card">
+      <div class="sl-list-header">
+        <h4>BSO De Vlinder — Maandelijkse aanvulling</h4>
+        <div style="display:flex;gap:8px;">
+          <button class="sl-btn-add" style="padding:6px 14px;">Herbestellen →</button>
+          <button class="sl-btn-outline" style="margin:0;padding:6px 14px;">Bewerken</button>
+        </div>
+      </div>
+      <div class="sl-list-items">8× Tritan Vakjesbord · 15× Beker met Naam · 15× Bestekset</div>
+      <div style="margin-top:8px;font-size:12px;color:var(--sl-text-light);">Laatst besteld: 10 januari 2026 · Totaal: € 287,50</div>
+    </div>
+
+    <div class="sl-list-card">
+      <div class="sl-list-header">
+        <h4>HACCP Kit — Alle locaties</h4>
+        <div style="display:flex;gap:8px;">
+          <button class="sl-btn-add" style="padding:6px 14px;">Herbestellen →</button>
+          <button class="sl-btn-outline" style="margin:0;padding:6px 14px;">Bewerken</button>
+        </div>
+      </div>
+      <div class="sl-list-items">3× HACCP Thermometer · 3× Maaltijdcontainer 10L</div>
+      <div style="margin-top:8px;font-size:12px;color:var(--sl-text-light);">Laatst besteld: 10 januari 2026 · Totaal: € 168,00</div>
+    </div>
+  </div>
+
+  <!-- ========== LOCATIES ========== -->
+  <div class="sl-panel" id="panel-locaties">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+      <div>
+        <h2 style="font-size:18px;margin-bottom:2px;">Verzendlocaties</h2>
+        <p style="color:var(--sl-text-light);">Beheer adressen en bestel per locatie.</p>
+      </div>
+      <button class="sl-btn-add" style="padding:8px 20px;">+ Locatie toevoegen</button>
+    </div>
+
+    <div class="sl-loc-grid">
+      <div class="sl-loc-card default">
+        <span class="sl-loc-badge">✓ Standaard verzendadres</span>
+        <h4>Vestiging Centrum</h4>
+        <p class="sl-loc-addr">Herestraat 45, 9711 LA Groningen</p>
+        <div class="sl-loc-meta">
+          👶 4 groepen · 48 kinderen<br>
+          📦 Laatste bestelling: 15 mrt 2026<br>
+          💰 Besteed dit jaar: € 1.847,50
+        </div>
+        <button class="sl-btn-outline" onclick="switchTab('producten')">Bestellen voor deze locatie →</button>
+      </div>
+      <div class="sl-loc-card">
+        <h4>Vestiging Oost</h4>
+        <p class="sl-loc-addr">Korreweg 112, 9714 AJ Groningen</p>
+        <div class="sl-loc-meta">
+          👶 3 groepen · 36 kinderen<br>
+          📦 Laatste bestelling: 1 feb 2026<br>
+          💰 Besteed dit jaar: € 650,00
+        </div>
+        <button class="sl-btn-outline" onclick="switchTab('producten')">Bestellen voor deze locatie →</button>
+      </div>
+      <div class="sl-loc-card">
+        <h4>BSO De Vlinder</h4>
+        <p class="sl-loc-addr">Paterswoldseweg 88, 9727 BM Groningen</p>
+        <div class="sl-loc-meta">
+          👶 2 groepen · 30 kinderen<br>
+          📦 Laatste bestelling: 10 jan 2026<br>
+          💰 Besteed dit jaar: € 350,00
+        </div>
+        <button class="sl-btn-outline" onclick="switchTab('producten')">Bestellen voor deze locatie →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== BESTELGESCHIEDENIS ========== -->
+  <div class="sl-panel" id="panel-bestellingen">
+    <h2 style="font-size:18px;margin-bottom:4px;">Bestelgeschiedenis</h2>
+    <p style="color:var(--sl-text-light);margin-bottom:20px;">Bekijk eerdere bestellingen, download facturen en herbestel met één klik.</p>
+
+    <table class="sl-order-table">
+      <thead>
+        <tr>
+          <th>Order</th>
+          <th>Datum</th>
+          <th>Locatie</th>
+          <th>Items</th>
+          <th>Totaal</th>
+          <th>Status</th>
+          <th>Acties</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>#CL-2026-0089</strong></td>
+          <td>15 mrt 2026</td>
+          <td>Vestiging Centrum</td>
+          <td>60 items</td>
+          <td><strong>€ 514,50</strong></td>
+          <td><span class="sl-status sl-status-delivered">Geleverd</span></td>
+          <td><a href="#" onclick="return false">Herbestellen</a> · <a href="#" onclick="return false">Factuur ↓</a></td>
+        </tr>
+        <tr>
+          <td><strong>#CL-2026-0067</strong></td>
+          <td>1 feb 2026</td>
+          <td>Vestiging Oost</td>
+          <td>38 items</td>
+          <td><strong>€ 356,25</strong></td>
+          <td><span class="sl-status sl-status-delivered">Geleverd</span></td>
+          <td><a href="#" onclick="return false">Herbestellen</a> · <a href="#" onclick="return false">Factuur ↓</a></td>
+        </tr>
+        <tr>
+          <td><strong>#CL-2026-0045</strong></td>
+          <td>10 jan 2026</td>
+          <td>BSO De Vlinder</td>
+          <td>22 items</td>
+          <td><strong>€ 287,50</strong></td>
+          <td><span class="sl-status sl-status-shipped">Verzonden</span></td>
+          <td><a href="#" onclick="return false">Herbestellen</a> · <a href="#" onclick="return false">Factuur ↓</a></td>
+        </tr>
+        <tr>
+          <td><strong>#CL-2025-0298</strong></td>
+          <td>12 dec 2025</td>
+          <td>Vestiging Centrum</td>
+          <td>85 items</td>
+          <td><strong>€ 738,00</strong></td>
+          <td><span class="sl-status sl-status-delivered">Geleverd</span></td>
+          <td><a href="#" onclick="return false">Herbestellen</a> · <a href="#" onclick="return false">Factuur ↓</a></td>
+        </tr>
+        <tr>
+          <td><strong>#CL-2025-0251</strong></td>
+          <td>3 nov 2025</td>
+          <td>Vestiging Centrum</td>
+          <td>40 items</td>
+          <td><strong>€ 412,75</strong></td>
+          <td><span class="sl-status sl-status-delivered">Geleverd</span></td>
+          <td><a href="#" onclick="return false">Herbestellen</a> · <a href="#" onclick="return false">Factuur ↓</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div><!-- /sl-main -->
+
+<!-- ===== FOOTER NOTE ===== -->
+<div class="sl-footer-note">
+  <p><strong>Dit is een interactieve mockup</strong> van het SparkLayer B2B-portaal geïntegreerd in de Cookinglife webshop.</p>
+  <p style="margin-top:4px;">In productie wordt dit als overlay op de bestaande Shopify-theme geïnstalleerd via de <a href="https://apps.shopify.com/sparklayer" target="_blank">SparkLayer Shopify app</a>.</p>
+  <p style="margin-top:12px;">
+    <a href="6-b2b-platform-keuze.html">← SparkLayer vs Shopify Plus vergelijking</a>
+    &nbsp;&nbsp;·&nbsp;&nbsp;
+    <a href="index.html">← Terug naar Groeiplan</a>
+  </p>
+</div>
+
+<script>
+function switchTab(name) {
+  document.querySelectorAll('.sl-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.sl-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + name).classList.add('active');
+  document.querySelectorAll('.sl-tab').forEach(t => {
+    if (t.textContent.toLowerCase().includes(name.substring(0, 4))) t.classList.add('active');
+  });
+}
+function changeQty(btn, delta) {
+  const input = btn.parentElement.querySelector('.sl-qty-input');
+  let val = parseInt(input.value) + delta;
+  if (val < 1) val = 1;
+  input.value = val;
+}
+function addItem(btn) {
+  btn.textContent = '✓ Toegevoegd';
+  btn.classList.add('added');
+  const badge = document.getElementById('cart-count');
+  badge.textContent = parseInt(badge.textContent) + 1;
+  setTimeout(() => { btn.textContent = 'Toevoegen'; btn.classList.remove('added'); }, 1500);
+}
+</script>
+
+</body>
+</html>
