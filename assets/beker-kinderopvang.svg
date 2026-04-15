@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" fill="none">
+  <!-- Background -->
+  <rect width="600" height="500" rx="16" fill="#f9fafb"/>
+  <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+    <circle cx="10" cy="10" r="0.8" fill="#e5e7eb"/>
+  </pattern>
+  <rect width="600" height="500" fill="url(#dots)" rx="16"/>
+
+  <!-- Label top -->
+  <rect x="170" y="18" width="260" height="28" rx="14" fill="#DD195A"/>
+  <text x="300" y="37" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#fff" letter-spacing="1">GEPERSONALISEERDE BEKERS</text>
+
+  <!-- === CUP 1 (left) — with logo === -->
+  <g transform="translate(60, 70)">
+    <!-- Cup body -->
+    <path d="M25 40 L15 220 C15 235 35 245 70 245 C105 245 125 235 125 220 L115 40 Z" fill="#60a5fa" stroke="#4a93e8" stroke-width="1.5"/>
+    <!-- Cup rim -->
+    <ellipse cx="70" cy="40" rx="50" ry="12" fill="#93c5fd" stroke="#4a93e8" stroke-width="1.5"/>
+    <!-- Lid -->
+    <rect x="30" y="20" width="80" height="22" rx="8" fill="#3b82f6" stroke="#2563eb" stroke-width="1.5"/>
+    <!-- Lid spout -->
+    <rect x="55" y="10" width="30" height="14" rx="7" fill="#3b82f6" stroke="#2563eb" stroke-width="1.5"/>
+    <!-- Logo area (white circle) -->
+    <circle cx="70" cy="130" r="32" fill="#fff" opacity="0.9"/>
+    <!-- Logo placeholder -->
+    <text x="70" y="124" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="#3b82f6">DE ZONNE-</text>
+    <text x="70" y="136" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="#3b82f6">STRAAL</text>
+    <text x="70" y="150" text-anchor="middle" font-family="system-ui,sans-serif" font-size="6" fill="#6b7280">☀️</text>
+    <!-- Highlight -->
+    <rect x="30" y="60" width="10" height="80" rx="5" fill="#93c5fd" opacity="0.4"/>
+  </g>
+
+  <!-- === CUP 2 (center) — with child name === -->
+  <g transform="translate(225, 60)">
+    <!-- Cup body -->
+    <path d="M25 40 L15 230 C15 245 35 255 70 255 C105 255 125 245 125 230 L115 40 Z" fill="#8EC760" stroke="#7ab854" stroke-width="1.5"/>
+    <!-- Cup rim -->
+    <ellipse cx="70" cy="40" rx="50" ry="12" fill="#a1d87a" stroke="#7ab854" stroke-width="1.5"/>
+    <!-- Lid -->
+    <rect x="30" y="20" width="80" height="22" rx="8" fill="#6db84a" stroke="#5fa03e" stroke-width="1.5"/>
+    <!-- Lid spout -->
+    <rect x="55" y="10" width="30" height="14" rx="7" fill="#6db84a" stroke="#5fa03e" stroke-width="1.5"/>
+    <!-- Name band -->
+    <rect x="20" y="110" width="100" height="40" rx="4" fill="#fff" opacity="0.9"/>
+    <text x="70" y="127" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#6b7280">Groep Vlinders</text>
+    <text x="70" y="143" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#374151">Emma</text>
+    <!-- Highlight -->
+    <rect x="30" y="60" width="10" height="80" rx="5" fill="#a1d87a" opacity="0.4"/>
+  </g>
+
+  <!-- === CUP 3 (right) — RVS laser engraved === -->
+  <g transform="translate(400, 70)">
+    <!-- Cup body -->
+    <path d="M25 40 L15 220 C15 235 35 245 70 245 C105 245 125 235 125 220 L115 40 Z" fill="#d1d5db" stroke="#9ca3af" stroke-width="1.5"/>
+    <!-- Metallic gradient effect -->
+    <path d="M25 40 L15 220 C15 235 35 245 70 245 L70 40 Z" fill="#e5e7eb" opacity="0.5"/>
+    <!-- Cup rim -->
+    <ellipse cx="70" cy="40" rx="50" ry="12" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.5"/>
+    <!-- Lid -->
+    <rect x="30" y="20" width="80" height="22" rx="8" fill="#9ca3af" stroke="#6b7280" stroke-width="1.5"/>
+    <!-- Lid spout -->
+    <rect x="55" y="10" width="30" height="14" rx="7" fill="#9ca3af" stroke="#6b7280" stroke-width="1.5"/>
+    <!-- Laser engraving -->
+    <text x="70" y="125" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" font-weight="600" fill="#6b7280" letter-spacing="0.5">KDV DE ZONNESTRAAL</text>
+    <text x="70" y="145" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#374151">Liam</text>
+    <text x="70" y="160" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7" fill="#9ca3af">LASER ENGRAVED</text>
+    <!-- Highlight -->
+    <rect x="30" y="55" width="8" height="75" rx="4" fill="#fff" opacity="0.3"/>
+  </g>
+
+  <!-- === ANNOTATIONS === -->
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0 0 L8 4 L0 8 Z" fill="#DD195A"/>
+    </marker>
+  </defs>
+
+  <!-- Arrow to logo cup -->
+  <line x1="45" y1="200" x2="75" y2="178" stroke="#DD195A" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="8" y="210" font-family="system-ui,sans-serif" font-size="10" fill="#DD195A" font-weight="600">Organisatie-logo</text>
+  <text x="8" y="222" font-family="system-ui,sans-serif" font-size="10" fill="#DD195A" font-weight="600">bedrukking</text>
+
+  <!-- Arrow to name cup -->
+  <text x="295" y="345" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#DD195A" font-weight="600">Groep + kindnaam</text>
+  <line x1="295" y1="335" x2="295" y2="322" stroke="#DD195A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Arrow to RVS cup -->
+  <line x1="555" y1="185" x2="525" y2="165" stroke="#DD195A" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="530" y="185" font-family="system-ui,sans-serif" font-size="10" fill="#DD195A" font-weight="600">RVS laser-</text>
+  <text x="530" y="197" font-family="system-ui,sans-serif" font-size="10" fill="#DD195A" font-weight="600">gravure</text>
+
+  <!-- Arrow to lid -->
+  <line x1="180" y1="80" x2="155" y2="92" stroke="#DD195A" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="165" y="72" font-family="system-ui,sans-serif" font-size="10" fill="#DD195A" font-weight="600">Lekvrij deksel</text>
+
+  <!-- === MATERIAL BADGES (bottom) === -->
+  <g transform="translate(25, 400)">
+    <rect width="110" height="50" rx="8" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="55" y="22" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#374151" font-weight="700">Tritan / RVS</text>
+    <text x="55" y="38" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#6b7280">BPA-vrij materiaal</text>
+  </g>
+  <g transform="translate(150, 400)">
+    <rect width="110" height="50" rx="8" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="55" y="22" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#374151" font-weight="700">70 °C</text>
+    <text x="55" y="38" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#6b7280">Vaatwasser-proof</text>
+  </g>
+  <g transform="translate(275, 400)">
+    <rect width="110" height="50" rx="8" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="55" y="22" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#374151" font-weight="700">Bulk upload</text>
+    <text x="55" y="38" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#6b7280">Namen per groep</text>
+  </g>
+  <g transform="translate(400, 400)">
+    <rect width="110" height="50" rx="8" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="55" y="22" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#374151" font-weight="700">Lekvrij</text>
+    <text x="55" y="38" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#6b7280">Anti-mors deksel</text>
+  </g>
+  <g transform="translate(525, 400)">
+    <rect width="55" height="50" rx="8" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="28" y="22" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#374151" font-weight="700">CBS</text>
+    <text x="28" y="38" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#6b7280">Hygiëne</text>
+  </g>
+
+  <!-- Bottom watermark -->
+  <text x="300" y="480" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#d1d5db">cookinglife — gepersonaliseerde bekers kinderopvang</text>
+</svg>
