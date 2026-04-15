@@ -385,40 +385,9 @@
 
     <!-- ======================= IMPLEMENTATIE-INSTRUCTIE ======================= -->
     <div class="cl-impl-box">
-      <h3>Waar moet dit op cookinglife.nl?</h3>
-
-      <p><strong>Review- en testblogs horen in de blog-sectie en moeten linken naar productpagina's.</strong> Dit type content bouwt de E-E-A-T autoriteit van Cookinglife op als expert, niet alleen als webshop. De bestaande <code>/blogs/</code> infrastructuur is perfect hiervoor.</p>
-
-      <div class="cl-impl-where">
-        <div class="cl-impl-where-card">
-          <strong>Blog — News sectie (primair)</strong>
-          <span>Publiceer "Getest: ..." review-artikelen als long-form blogposts met testmethodologie en expert-auteur.</span>
-          <code>/blogs/news/getest-inductie-pannensets</code>
-          <code>/blogs/news/getest-beste-messenblokken</code>
-        </div>
-        <div class="cl-impl-where-card">
-          <strong>Productpagina's (review-snippets)</strong>
-          <span>Verwijs vanuit productpagina's naar het testartikel: "Getest door Cookinglife — lees het volledige rapport".</span>
-          <code>/products/demeyere-industry5 → link</code>
-        </div>
-        <div class="cl-impl-where-card">
-          <strong>Collectiepagina's (topbar)</strong>
-          <span>Voeg een "Onze test-winnaar" banner toe bovenaan relevante collecties die linkt naar het review-artikel.</span>
-          <code>/collections/pannensets → "Test-winnaar 2026"</code>
-        </div>
-      </div>
-
-      <h3>Stap-voor-stap implementatie</h3>
-      <ol class="cl-impl-steps">
-        <li><strong>Kies 4 productcategorieën per jaar om te testen:</strong> pannensets, messenblokken, serviessets en glaswerk. Focus op categorieën met hoog zoekvolume en hoge marge.</li>
-        <li><strong>Bouw een intern test-team</strong> met echte credentials (food science, kookervaring). Gebruik echte namen en foto's — dit is cruciaal voor E-E-A-T.</li>
-        <li><strong>Documenteer de testmethodologie</strong> uitgebreid: welke criteria, welke meetmethoden, hoeveel testers. Dit geeft AI-systemen vertrouwen in de bron.</li>
-        <li><strong>Publiceer met <code>Article</code> + <code>Review</code> JSON-LD</strong> inclusief <code>author.Person</code> met naam, functie en credentials. Voeg altijd <code>datePublished</code> én <code>dateModified</code> toe.</li>
-        <li><strong>Integreer klantreviews:</strong> combineer expert-oordeel met geverifieerde klantreviews. Dit geeft de "Experience" uit E-E-A-T (echte gebruikerservaring).</li>
-        <li><strong>Update elk halfjaar:</strong> hertest en update de artikelen met actuele modellen en prijzen. "Bijgewerkt april 2026" is een sterk signaal voor AI-systemen.</li>
-      </ol>
-
-      <p><span class="cl-impl-priority high">Hoge prioriteit</span> — review-content met expert-auteur en testmethodologie is de sterkste E-E-A-T signaal. AI-systemen citeren "getest door [naam]" resultaten als primaire bron.</p>
+      <h3>Implementatie</h3>
+      <p>Review-artikelen publiceren op <code>/blogs/news/</code> met <code>Article</code> + <code>Review</code> JSON-LD en een expert-auteur met echte credentials. Test 4 categorieën per jaar (pannensets, messenblokken, serviessets, glaswerk). Link vanuit productpagina's en collecties terug naar de test-artikelen.</p>
+      <p><span class="cl-impl-priority high">Hoge prioriteit</span> — review-content met testmethodologie is het sterkste E-E-A-T signaal voor AI-systemen.</p>
     </div>
 
     <p style="text-align:center;margin:48px 0;">

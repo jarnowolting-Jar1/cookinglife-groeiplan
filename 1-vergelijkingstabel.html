@@ -271,42 +271,9 @@
 
     <!-- ======================= IMPLEMENTATIE-INSTRUCTIE ======================= -->
     <div class="cl-impl-box">
-      <h3>Waar moet dit op cookinglife.nl?</h3>
-
-      <p><strong>Vergelijkingstabellen horen op categorie- en collectiepagina's.</strong> Cookinglife heeft al een uitgebreid <code>/collections/</code> systeem. De tabellen moeten worden toegevoegd als content-blok boven of onder de productgrid op bestaande pagina's.</p>
-
-      <div class="cl-impl-where">
-        <div class="cl-impl-where-card">
-          <strong>Collectiepagina's (primair)</strong>
-          <span>Voeg vergelijkingstabellen toe aan de bovenkant van categoriepagina's, vóór de productgrid.</span>
-          <code>/collections/koekenpannen</code>
-          <code>/collections/braadpannen</code>
-          <code>/collections/messensets</code>
-        </div>
-        <div class="cl-impl-where-card">
-          <strong>How-To sectie (secundair)</strong>
-          <span>Maak standalone vergelijkingspagina's als koopgids met meer diepgang.</span>
-          <code>/pages/how-to/koekenpan-vergelijken</code>
-          <code>/pages/how-to/beste-braadpan</code>
-        </div>
-        <div class="cl-impl-where-card">
-          <strong>Blog (traffic-builder)</strong>
-          <span>Publiceer seizoensgebonden vergelijkingsartikelen die linken naar collecties.</span>
-          <code>/blogs/news/beste-pannen-2026</code>
-        </div>
-      </div>
-
-      <h3>Stap-voor-stap implementatie</h3>
-      <ol class="cl-impl-steps">
-        <li><strong>Start met de top-5 collectiepagina's</strong> (pannen, servies, messen, bestek, glazen) — voeg boven de productgrid een vergelijkingstabel toe met de 3-4 materiaal-/merktypen in die categorie.</li>
-        <li><strong>Voeg een "Welke [product] past bij jou?" blok toe</strong> in Shopify via een custom section of metafield. Dit kan in het Shopify Dawn-thema als collapsible content block.</li>
-        <li><strong>Gebruik HTML <code>&lt;table&gt;</code> met <code>&lt;thead&gt;</code>/<code>&lt;tbody&gt;</code></strong> — geen afbeelding-tabellen. AI-systemen kunnen alleen tekst-tabellen extraheren.</li>
-        <li><strong>Voeg <code>ItemList</code> JSON-LD toe</strong> in het theme.liquid of via een Shopify-app als SEO Manager. Eén keer instellen per collectie.</li>
-        <li><strong>Publiceer elk kwartaal een "Beste [categorie] 2026" blog</strong> op <code>/blogs/news/</code> met een vergelijkingstabel die linkt naar de collectiepagina. Dit genereert backlinks en AI-citations.</li>
-        <li><strong>Meet het effect:</strong> gebruik Google Search Console en Ahrefs/Semrush om te monitoren welke vergelijkingspagina's geciteerd worden in AI Overviews.</li>
-      </ol>
-
-      <p><span class="cl-impl-priority high">Hoge prioriteit</span> — vergelijkingstabellen zijn de #1 content-vorm die AI-systemen citeren. Begin hier.</p>
+      <h3>Implementatie</h3>
+      <p>Vergelijkingstabellen toevoegen op collectiepagina's (<code>/collections/</code>) als content-blok boven de productgrid. Start met de top-5 categorieën: pannen, servies, messen, bestek, glazen. Gebruik HTML <code>&lt;table&gt;</code> + <code>ItemList</code> JSON-LD zodat AI-systemen de data direct kunnen extraheren.</p>
+      <p><span class="cl-impl-priority high">Hoge prioriteit</span> — vergelijkingstabellen zijn de #1 content-vorm die AI-systemen citeren.</p>
     </div>
 
     <p style="text-align:center;margin:48px 0;">
