@@ -4,24 +4,27 @@
    ============================================================ */
 
 :root {
-  --cl-pink: #DD195A;
+  --cl-pink: #DC054F;
   --cl-pink-dark: #B5124A;
+  --cl-promo: #7c2852;
   --cl-green: #8EC760;
   --cl-green-dark: #72A94A;
+  --cl-red: #DE242B;
   --cl-bg: #FFFFFF;
   --cl-bg-soft: #FAFAFA;
-  --cl-text: #1A1A1A;
-  --cl-muted: #6B6B6B;
+  --cl-text: #28353D;
+  --cl-text-secondary: #5D6C77;
+  --cl-muted: #64748B;
   --cl-border: #E8E8E8;
   --cl-hover: #F7F7F7;
   --cl-warn: #FDF6E3;
   --cl-star: #F5B301;
   --cl-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   --cl-shadow-lg: 0 6px 24px rgba(0, 0, 0, 0.08);
-  --cl-radius: 8px;
+  --cl-radius: 6px;
   --cl-container: 1280px;
-  --cl-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+  --cl-font: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
 }
 
 * {
@@ -51,7 +54,7 @@ a:hover { text-decoration: underline; }
 
 /* ---------- Topbar / Header ---------- */
 .cl-topbar {
-  background: var(--cl-pink);
+  background: var(--cl-promo);
   color: #fff;
   font-size: 13px;
   padding: 8px 0;
@@ -1020,11 +1023,12 @@ a:hover { text-decoration: underline; }
 
 /* ---------- Footer ---------- */
 .cl-footer {
-  background: #1A1A1A;
-  color: #ccc;
+  background: #fff;
+  color: var(--cl-text-secondary);
   padding: 48px 0 0;
   margin-top: 64px;
   font-size: 14px;
+  border-top: 1px solid var(--cl-border);
 }
 .cl-footer-cols {
   display: grid;
@@ -1033,29 +1037,29 @@ a:hover { text-decoration: underline; }
   padding-bottom: 32px;
 }
 .cl-footer h4 {
-  color: #fff;
+  color: var(--cl-text);
   font-size: 15px;
   margin: 0 0 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  font-weight: 700;
 }
 .cl-footer ul { list-style: none; padding: 0; margin: 0; }
 .cl-footer li { margin-bottom: 8px; }
-.cl-footer a { color: #ccc; }
+.cl-footer a { color: var(--cl-text-secondary); }
 .cl-footer a:hover { color: var(--cl-pink); }
 .cl-footer-bottom {
-  border-top: 1px solid #333;
+  border-top: 1px solid var(--cl-border);
   padding: 20px 0;
   text-align: center;
   font-size: 12px;
-  color: #888;
+  color: var(--cl-muted);
 }
 .cl-footer-trust {
-  background: #111;
+  background: var(--cl-bg-soft);
   padding: 14px 0;
   text-align: center;
   font-size: 13px;
-  color: #ccc;
+  color: var(--cl-text-secondary);
+  border-top: 1px solid var(--cl-border);
 }
 .cl-footer-trust strong { color: var(--cl-green); }
 
