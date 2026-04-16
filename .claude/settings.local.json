@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:cookinglife.nl)",
+      "WebSearch",
+      "WebFetch(domain:www.sparklayer.io)",
+      "WebFetch(domain:www.shopify.com)",
+      "WebFetch(domain:b2bridge.io)",
+      "WebFetch(domain:apps.shopify.com)",
+      "WebFetch(domain:weave.figma.com)",
+      "WebFetch(domain:docs.sparklayer.io)",
+      "WebFetch(domain:demo.sparklayer.io)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "WebFetch(domain:www.cookinglife.nl)",
+      "Bash(git reset:*)",
+      "Bash(git push:*)",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" run list --limit 3 --repo jarnowolting-Jar1/cookinglife-groeiplan)"
+    ]
+  }
+}

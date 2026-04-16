@@ -126,23 +126,35 @@ a:hover { text-decoration: underline; }
   padding: 14px 0;
 }
 
-/* Logo — dark pill with white+pink text */
+/* Logo — burgundy tag with pink chevron (replica cookinglife.nl) */
 .cl-logo {
+  position: relative;
   display: inline-flex;
   align-items: center;
   background: var(--cl-promo);
-  border-radius: 8px;
-  padding: 10px 18px;
-  font-size: 22px;
+  padding: 14px 20px;
+  margin-right: 20px;
+  font-size: 26px;
   font-weight: 800;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.5px;
   color: #fff;
   flex-shrink: 0;
   line-height: 1;
   text-decoration: none;
 }
-.cl-logo:hover { text-decoration: none; }
-.cl-logo span { color: var(--cl-pink); }
+.cl-logo::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-top: 24px solid transparent;
+  border-bottom: 24px solid transparent;
+  border-left: 20px solid var(--cl-pink);
+}
+.cl-logo:hover { text-decoration: none; color: #fff; }
+.cl-logo span { color: #fff; font-weight: 400; font-style: italic; }
 
 /* Search bar — gray bg, no border, search icon */
 .cl-search {
