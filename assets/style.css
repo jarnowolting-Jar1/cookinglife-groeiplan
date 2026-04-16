@@ -126,13 +126,13 @@ a:hover { text-decoration: underline; }
   padding: 14px 0;
 }
 
-/* Logo — rounded pink tag with short chevron (replica cookinglife.nl) */
+/* Logo — rounded pink tag with small chevron point (replica cookinglife.nl) */
 .cl-logo {
   position: relative;
   display: inline-flex;
   align-items: center;
-  padding: 14px 32px 14px 22px;
-  margin-right: 20px;
+  padding: 14px 22px;
+  margin-right: 32px;
   font-size: 28px;
   font-weight: 800;
   letter-spacing: -0.8px;
@@ -140,26 +140,18 @@ a:hover { text-decoration: underline; }
   flex-shrink: 0;
   line-height: 1;
   text-decoration: none;
-  z-index: 0;
-}
-.cl-logo::before {
-  content: "";
-  position: absolute;
-  inset: 0;
   background: var(--cl-pink);
   border-radius: 10px 0 0 10px;
-  z-index: -1;
 }
 .cl-logo::after {
   content: "";
   position: absolute;
   top: 0;
-  left: calc(100% - 18px);
-  width: 18px;
+  left: 100%;
+  width: 12px;
   height: 100%;
   background: var(--cl-pink);
   clip-path: polygon(0 0, 100% 50%, 0 100%);
-  z-index: -1;
 }
 .cl-logo:hover { text-decoration: none; color: #fff; }
 .cl-logo span { color: #fff; font-weight: 300; font-style: italic; margin-left: 1px; }
