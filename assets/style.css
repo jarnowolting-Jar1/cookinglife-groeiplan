@@ -126,24 +126,24 @@ a:hover { text-decoration: underline; }
   padding: 14px 0;
 }
 
-/* Logo — pink tag with pointed chevron right (replica cookinglife.nl) */
+/* Logo — pink tag with subtle chevron point (replica cookinglife.nl) */
 .cl-logo {
   display: inline-flex;
   align-items: center;
   background: var(--cl-pink);
-  padding: 18px 44px 18px 24px;
+  padding: 16px 48px 16px 22px;
   margin-right: 20px;
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 800;
   letter-spacing: -0.5px;
   color: #fff;
   flex-shrink: 0;
   line-height: 1;
   text-decoration: none;
-  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%);
+  clip-path: polygon(0 0, calc(100% - 26px) 0, 100% 50%, calc(100% - 26px) 100%, 0 100%);
 }
 .cl-logo:hover { text-decoration: none; color: #fff; }
-.cl-logo span { color: #fff; font-weight: 300; font-style: italic; margin-left: 2px; }
+.cl-logo span { color: #fff; font-weight: 300; font-style: italic; margin-left: 3px; }
 
 /* Search bar — gray bg, no border, search icon */
 .cl-search {
