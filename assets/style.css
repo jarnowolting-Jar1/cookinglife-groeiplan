@@ -1186,6 +1186,106 @@ a:hover { text-decoration: underline; }
   .cl-nav-special { flex-wrap: wrap; }
 }
 
+/* ---------- Authors / Makers strip ---------- */
+.cl-authors {
+  background: linear-gradient(135deg, var(--cl-promo) 0%, var(--cl-pink) 100%);
+  color: #fff;
+  padding: 48px 0;
+  margin-top: 64px;
+}
+.cl-authors-head {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.cl-authors-head h2 {
+  color: #fff;
+  font-size: 26px;
+  margin: 0 0 8px;
+  font-weight: 700;
+}
+.cl-authors-head p {
+  color: rgba(255,255,255,0.85);
+  font-size: 15px;
+  margin: 0;
+}
+.cl-authors-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.cl-author-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: var(--cl-radius);
+  padding: 28px;
+  backdrop-filter: blur(4px);
+}
+.cl-author-card .cl-author-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+.cl-author-card .cl-author-avatar-lg {
+  width: 56px;
+  height: 56px;
+  background: #fff;
+  color: var(--cl-pink);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 800;
+  flex-shrink: 0;
+  letter-spacing: -0.5px;
+}
+.cl-author-card h3 {
+  margin: 0 0 2px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+}
+.cl-author-card .cl-author-role {
+  font-size: 13px;
+  color: rgba(255,255,255,0.8);
+  margin: 0;
+}
+.cl-author-card .cl-author-desc {
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.92);
+  margin: 0 0 16px;
+}
+.cl-author-card .cl-author-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.cl-author-card .cl-author-phone:hover {
+  background: #fff;
+  color: var(--cl-pink);
+  text-decoration: none;
+}
+.cl-author-card .cl-author-phone::before {
+  content: "📞";
+  font-size: 14px;
+}
+@media (max-width: 720px) {
+  .cl-authors-grid { grid-template-columns: 1fr; }
+}
+
 /* ---------- Footer ---------- */
 .cl-footer {
   background: #fff;
