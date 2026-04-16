@@ -27,39 +27,63 @@
 </head>
 <body>
 
+<!-- ======================= PROMO BAR ======================= -->
+<div class="cl-promobar">
+  <div class="cl-container">🍴 Onze dagdeal: Bestekset Sevilla! <a href="#">Shop nu</a></div>
+</div>
+
+<!-- ======================= USP BAR ======================= -->
 <div class="cl-topbar">
   <div class="cl-container">
-    <span><strong>Gratis verzending</strong> vanaf € 55,-</span>
-    <span>30 dagen retour</span>
-    <span><strong>4,8 ★</strong> Trusted Shops · 22.000+ reviews</span>
+    <div class="cl-topbar-usps">
+      <span>Betrouwbare levering uit eigen voorraad door PostNL</span>
+      <span>Voor 22:30 besteld, is morgen in huis</span>
+      <span>Gratis verzending vanaf €55,-</span>
+    </div>
+    <div class="cl-topbar-trust">
+      <span class="cl-trust-star">★ 4.8</span> Trusted Shops 22.167 reviews
+    </div>
   </div>
 </div>
 
+<!-- ======================= HEADER ======================= -->
 <header class="cl-header">
   <div class="cl-container cl-header-inner">
-    <a href="index.html" class="cl-logo">cooking<span>life</span><small>ALLES VOOR JOUW SMAAK</small></a>
+    <a href="index.html" class="cl-logo">cooking<span>life</span></a>
     <form class="cl-search" onsubmit="return false">
-      <input type="text" placeholder="Waar ben je naar op zoek?">
-      <button type="submit">Zoek</button>
+      <input type="text" placeholder="Waar ben je naar op zoek">
+      <button type="submit"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></button>
     </form>
-    <nav class="cl-header-actions">
-      <a href="#"><span class="cl-icon">♥</span>Wensen</a>
-      <a href="#"><span class="cl-icon">👤</span>Account</a>
-      <a href="#"><span class="cl-icon">🛒</span>Winkelmand</a>
+    <a href="#" class="cl-help-link"><span class="cl-help-dot"></span>Hulp en contact</a>
+    <div class="cl-header-divider"></div>
+    <div class="cl-country">🇳🇱 Nederland (EUR)</div>
+    <div class="cl-header-divider"></div>
+    <nav class="cl-header-actions" aria-label="Account en winkelmand">
+      <a href="#" aria-label="Verlanglijst"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></a>
+      <a href="#" aria-label="Account"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
+      <a href="#" aria-label="Winkelmand"><svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span class="cl-cart-count">0</span></a>
     </nav>
   </div>
-  <nav class="cl-nav">
+  <nav class="cl-nav" aria-label="Hoofdnavigatie">
     <div class="cl-container">
       <ul>
-        <li><a href="#" class="sale">Outlet</a></li>
-        <li><a href="#">Servies</a></li>
-        <li><a href="#">Glaswerk</a></li>
-        <li><a href="#">Bestek</a></li>
-        <li><a href="#">Pannen</a></li>
-        <li><a href="#">Messen</a></li>
-        <li><a href="#">Keukengerei</a></li>
-        <li><a href="#">Merken</a></li>
+        <li><a href="#" class="sale">Outlet <span class="nav-chevron">▾</span></a></li>
+        <li><a href="#">Servies <span class="nav-chevron">▾</span></a></li>
+        <li><a href="#">Glaswerk <span class="nav-chevron">▾</span></a></li>
+        <li><a href="#">Bestek <span class="nav-chevron">▾</span></a></li>
+        <li><a href="#">Pannen <span class="nav-chevron">▾</span></a></li>
+        <li><a href="#">Messen <span class="nav-chevron">▾</span></a></li>
+        <li><a href="#">Koffie en Thee <span class="nav-chevron">▾</span></a></li>
+        <li><a href="#">Keukengerei <span class="nav-chevron">▾</span></a></li>
+        <li><a href="#">Kaarsen &amp; Geuren <span class="nav-chevron">▾</span></a></li>
+        <li><a href="#">BBQ <span class="nav-chevron">▾</span></a></li>
       </ul>
+      <div class="cl-nav-special">
+        <a href="#">Zakelijk</a>
+        <a href="#">Recepten</a>
+        <a href="#">Merken</a>
+        <a href="#">Nieuw</a>
+      </div>
     </div>
   </nav>
 </header>
