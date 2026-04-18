@@ -15,7 +15,25 @@
       "WebFetch(domain:www.cookinglife.nl)",
       "Bash(git reset:*)",
       "Bash(git push:*)",
-      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" run list --limit 3 --repo jarnowolting-Jar1/cookinglife-groeiplan)"
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" run list --limit 3 --repo jarnowolting-Jar1/cookinglife-groeiplan)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(py --version)",
+      "Bash(where.exe python:*)",
+      "Bash(where.exe py:*)",
+      "Bash(where.exe node:*)",
+      "Bash(where.exe npx:*)",
+      "Bash(where.exe python3:*)",
+      "Bash(where.exe php:*)",
+      "Read(//c/Program Files/**)",
+      "Bash(ls \"/c/Python\"*)",
+      "Read(//c/Users/Lenovo/AppData/Local/Programs/**)",
+      "Bash(echo $PATH)",
+      "Bash(ls /c/Users/Lenovo/AppData/Local/Programs/Python*)",
+      "Read(//c/Users/Lenovo/**)",
+      "Bash(grep -l \"</body>\" \"C:\\\\Users\\\\Lenovo\\\\dfghn\"/*.html)",
+      "Bash(for f:*)",
+      "Bash(do sed:*)",
+      "Bash(done)"
     ]
   }
 }
