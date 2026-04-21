@@ -377,66 +377,83 @@
 
   <!-- ======================= PRODUCT HERO ======================= -->
   <section class="cl-product-page">
-    <div class="cl-gallery" aria-label="Productafbeelding" style="padding:0;overflow:hidden;">
-      <img src="assets/beker-kinderopvang.svg" alt="Gepersonaliseerde bekers kinderopvang — Tritan en RVS met logo-bedrukking en lasergravure van kindnamen" style="width:100%;height:100%;object-fit:contain;">
+
+    <!-- GALLERY COLUMN -->
+    <div class="cl-gallery-col">
+      <span class="cl-new-badge">NIEUW</span>
+      <div class="cl-gallery-hero">
+        <img src="assets/beker-kinderopvang.svg" alt="Gepersonaliseerde bekers kinderopvang — Tritan en RVS met logo-bedrukking en lasergravure van kindnamen">
+      </div>
+      <div class="cl-thumb-strip">
+        <div class="cl-thumb active"><img src="assets/beker-kinderopvang.svg" alt=""></div>
+        <div class="cl-thumb"><img src="assets/beker-kinderopvang.svg" alt=""></div>
+        <div class="cl-thumb"><img src="assets/beker-kinderopvang.svg" alt=""></div>
+        <div class="cl-thumb"><img src="assets/beker-kinderopvang.svg" alt=""></div>
+        <div class="cl-thumb"><img src="assets/beker-kinderopvang.svg" alt=""></div>
+      </div>
     </div>
 
-    <div class="cl-product-info">
-      <div class="cl-brand-name">Cookinglife</div>
+    <!-- BUY BOX COLUMN -->
+    <div class="cl-buy-col">
       <h1>Gepersonaliseerde Beker Kinderopvang — met Naam &amp; Logo</h1>
-      <div class="cl-rating">
-        <span class="cl-stars">★★★★★</span>
-        <strong>4,9</strong>
-        <span>(143 reviews)</span>
-        <span style="margin-left:auto;color:var(--cl-green);font-weight:700;">✓ Op voorraad</span>
+      <div class="cl-rating-brand">
+        <span class="cl-stars-inline">★ 4,9 <small style="color:var(--cl-muted);font-weight:500;">(143)</small></span>
+        <span class="cl-brand-chip">Cookinglife</span>
       </div>
 
-      <div class="cl-price-block">
+      <label class="cl-select-label" for="variant-b">Kies je variant</label>
+      <select class="cl-variant-select" id="variant-b">
+        <option>Tritan beker / Naam kind / Groen / 250 ml</option>
+        <option>Tritan beker / Naam kind / Blauw / 250 ml</option>
+        <option>Tritan beker / Naam + logo / Groen / 250 ml</option>
+        <option>RVS beker / Lasergravure / 250 ml (peuter)</option>
+        <option>RVS beker / Lasergravure / 350 ml (BSO)</option>
+        <option>20 stuks / Staffelkorting 15%</option>
+      </select>
+
+      <div class="cl-advies-label">Adviesprijs</div>
+      <div class="cl-price-row">
         <span class="cl-price-old">€ 12,95</span>
         <span class="cl-price-big">€ 9,95</span>
-        <div style="font-size:12px;color:var(--cl-muted);margin-top:6px;">Inclusief btw · Bulk vanaf 20 stuks: € 7,50/st</div>
+        <span class="cl-save-badge">Bespaar € 3,00 (23%)</span>
       </div>
 
-      <div>
-        <strong style="font-size:13px;">Materiaal: Tritan</strong>
-        <div class="cl-variants">
-          <button class="active">Tritan</button>
-          <button>RVS (lasergravure)</button>
+      <div class="cl-qty-stock">
+        <select class="cl-qty-select" aria-label="Aantal">
+          <option>1</option><option>5</option><option>10</option><option>20</option><option>30</option><option>50</option>
+        </select>
+        <div class="cl-stock-line">
+          <span class="cl-stock-ok">Ruim op voorraad</span>
+          <small>Voor 22:30 besteld, is morgen in huis</small>
         </div>
       </div>
 
-      <div>
-        <strong style="font-size:13px;">Kleur: Groen</strong>
-        <div class="cl-variants">
-          <button class="active">Groen</button>
-          <button>Blauw</button>
-          <button>Roze</button>
-          <button>Geel</button>
-          <button>RVS naturel</button>
+      <div class="cl-cart-row">
+        <a href="#" class="cl-btn-cart">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          In winkelwagen
+        </a>
+        <button class="cl-heart-btn" aria-label="Toevoegen aan verlanglijst">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+      </div>
+
+      <div class="cl-why-box">
+        <h3>Waarom kiezen voor Cookinglife?</h3>
+        <ul>
+          <li><span class="cl-why-check">✓</span><strong>Uitstekende</strong> klantbeoordeling 4,8/5,0 · 22.167 reviews</li>
+          <li><span class="cl-why-check">✓</span>Voor 22:30 uur besteld is <strong>vandaag</strong> verstuurd</li>
+          <li><span class="cl-why-check">✓</span><strong>Staffelkorting</strong> vanaf 20 stuks — automatisch verrekend</li>
+        </ul>
+      </div>
+
+      <div class="cl-keuzehulp-box">
+        <div class="cl-keuzehulp-icon">🍼</div>
+        <div class="cl-keuzehulp-body">
+          <strong>Twijfel je welke beker het beste past?</strong>
+          <button class="cl-keuzehulp-btn">Start keuzehulp →</button>
         </div>
       </div>
-
-      <div>
-        <strong style="font-size:13px;">Personalisatie</strong>
-        <div class="cl-variants">
-          <button class="active">Naam kind</button>
-          <button>Naam + groep</button>
-          <button>Logo + naam</button>
-        </div>
-      </div>
-
-      <div style="margin-top:24px;display:flex;gap:12px;">
-        <a href="#" class="cl-btn" style="flex:1;text-align:center;">In winkelmand</a>
-        <a href="#" class="cl-btn cl-btn-outline">♥</a>
-      </div>
-
-      <ul class="cl-checklist" style="margin-top:20px;">
-        <li>Lekvrij deksel — anti-mors voor peuters</li>
-        <li>Bedrukking vaatwasserbestendig (70 °C)</li>
-        <li>RVS-optie: lasergravure die nooit vervaagt</li>
-        <li>Bulk upload: namenlijst per groep via portaal</li>
-        <li>BPA-vrij · Voorkomt bekerverwisseling (CBS hygiëne)</li>
-      </ul>
     </div>
   </section>
 
@@ -450,30 +467,138 @@
     </ul>
   </div>
 
-  <!-- ======================= KORTE BESCHRIJVING ======================= -->
-  <section class="cl-section" style="padding-bottom:0;">
-    <h2>Productomschrijving</h2>
-    <p style="font-size:17px;">
-      <strong>Robuuste, lekvrije beker die in bulk geleverd wordt met het logo van de opvangorganisatie én de naam van de groep of het individuele kind.</strong> Hygiëne is een kritiek punt in de kinderopvang; het CBS meldt dat besmetting op het werk een belangrijke reden is voor verzuim in de sector. Het voorkomen van bekerverwisseling is daarom essentieel. De bedrukking is vaatwasserbestendig tot 70 °C. Voor de professionele markt is de RVS-variant met lasergravure een duurzame optie die nooit vervaagt. Cookinglife onderscheidt zich met een portaal waar locaties per groep een namenlijst kunnen uploaden voor hun jaarlijkse bestelling.
-    </p>
+  <!-- ======================= PRODUCT DETAILS 2-KOLOM ======================= -->
+  <section class="cl-pd-grid">
 
-    <!-- Specificatie tabel -->
-    <h3>Specificaties</h3>
-    <div class="cl-table-wrap">
-      <table class="cl-comparison-table">
-        <tbody>
-          <tr><td>Merk</td><td>Cookinglife</td></tr>
-          <tr><td>Materiaal Tritan-versie</td><td>Tritan™ copolyester (BPA-vrij, onbreekbaar)</td></tr>
-          <tr><td>Materiaal RVS-versie</td><td>18/8 roestvrij staal, dubbelwandig</td></tr>
-          <tr><td>Inhoud</td><td>250 ml (peuter) / 350 ml (BSO)</td></tr>
-          <tr><td>Deksel</td><td>Lekvrij siliconendeksel met drinktuit</td></tr>
-          <tr><td>Personalisatie Tritan</td><td>Fullcolor bedrukking (vaatwasserbestendig)</td></tr>
-          <tr><td>Personalisatie RVS</td><td>Lasergravure (vervaagt nooit)</td></tr>
-          <tr><td>Vaatwasserbestendig</td><td>Ja, tot 70 °C (industriële vaatwasmachine)</td></tr>
-          <tr><td>BPA-vrij</td><td>Ja · EU-verordening 1935/2004</td></tr>
-          <tr><td>Logistieke service</td><td>Portaal voor namenlijst upload per groep</td></tr>
-        </tbody>
+    <!-- LEFT: beschrijving + FAQ uitklapbaar -->
+    <div class="cl-pd-left">
+      <h2>Gepersonaliseerde Beker Kinderopvang — met Naam &amp; Logo</h2>
+
+      <p class="cl-direct-answer">
+        <strong>Robuuste, lekvrije beker voor peuters (1-4 jaar) in de kinderopvang</strong>, leverbaar met de naam van het kind én het logo van de organisatie. Tritan (BPA-vrij, onbreekbaar) of RVS met lasergravure. Vaatwasserbestendig tot 70 °C. Getest op 500+ wasscycli. Bulk-upload via B2B-portaal — bekers gesorteerd per groep geleverd. Voorkomt bekerverwisseling en vermindert daarmee besmettingsrisico<cite><a href="#bron-cbs">[1]</a></cite>.
+      </p>
+
+      <div class="cl-faq" style="margin:0 0 20px;">
+        <details open>
+          <summary>Gepersonaliseerd per kind &amp; locatie</summary>
+          <div class="cl-faq-body">
+            <p>Elke beker wordt voorzien van de <strong>naam van het kind</strong> via fullcolor UV-bedrukking (Tritan) of lasergravure (RVS). Optioneel combineer je dit met het logo van je organisatie. Via ons B2B-portaal upload je een namenlijst per groep — wij leveren de bekers gesorteerd en klaar om uit te delen.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Veilig materiaal — Tritan &amp; 18/8 RVS</summary>
+          <div class="cl-faq-body">
+            <p>De <strong>Tritan-versie</strong> (BPA-vrij, onbreekbaar copolyester) is geschikt voor dagelijks gebruik bij peuters. De <strong>RVS-versie</strong> (18/8 dubbelwandig roestvrij staal) is ideaal voor BSO's en houdt dranken langer warm of koud. Beide voldoen aan EU-verordening 1935/2004 en zijn opneembaar in het HACCP-voedselveiligheidsplan.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Lekvrij ontwerp voor peuters</summary>
+          <div class="cl-faq-body">
+            <p>Het siliconendeksel met drinktuit is <strong>volledig lekvrij</strong> — ook bij schudden of omvallen in een tas. De 250 ml maat past perfect in kleine kinderhanden en heeft een drinktuit die morsen minimaliseert. De 350 ml BSO-variant heeft een bredere opening en is ook geschikt voor warme dranken (tot 80 °C bij RVS).</p>
+          </div>
+        </details>
+        <details>
+          <summary>Jaarlijkse herbestelling eenvoudig gemaakt</summary>
+          <div class="cl-faq-body">
+            <p>Bij de jaarlijkse groepswisseling bestelt u <strong>alleen bekers voor nieuwe kinderen</strong>. Upload de nieuwe namenlijst via ons portaal — wij vergelijken automatisch met uw vorige bestelling. Tritan-bedrukking: 5 werkdagen. RVS-lasergravure: 7-10 werkdagen. Plan 2 weken voor groepswisseling.</p>
+          </div>
+        </details>
+      </div>
+
+      <h3>Specificaties</h3>
+      <ul class="cl-pd-specs">
+        <li>Merk: Cookinglife</li>
+        <li>Model: Kinderopvang Gepersonaliseerde Beker</li>
+        <li>Materiaal: Tritan BPA-vrij / 18/8 RVS dubbelwandig</li>
+        <li>Inhoud: 250 ml (peuter) / 350 ml (BSO)</li>
+        <li>Deksel: Lekvrij siliconen met drinktuit</li>
+        <li>Personalisatie: UV-bedrukking of lasergravure</li>
+        <li>Vaatwasserbestendig: Ja (tot 70 °C)</li>
+        <li>Leeftijd: 12 maanden – 12 jaar</li>
+        <li>Conform: EU-verordening 1935/2004 · HACCP · BPA-vrij</li>
+      </ul>
+
+      <div class="cl-over-merk">
+        <div>
+          <h2>Over Cookinglife</h2>
+          <p><a href="#">Cookinglife</a> staat voor tijdloze functionaliteit, innovatief design en buitengewone kwaliteit — sinds 1992. Op basis van deze traditie ontwikkelen designers en productmanagers collecties die de leefomgeving in de Nederlandse kinderopvang vorm geven.</p>
+          <p>Met een dedicated B2B-portaal voor kinderopvang, BSO's en peuterspeelzalen maakt Cookinglife jaarlijkse herbestellingen, staffelkortingen en groepsgewijze personalisatie eenvoudig en efficiënt.</p>
+        </div>
+        <div class="cl-over-merk-logo">
+          <div style="font-size:24px;font-weight:800;color:var(--cl-pink);">cl</div>
+          <div>Cookinglife</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: spec tabellen -->
+    <div class="cl-pd-right">
+      <h2>Gepersonaliseerde Beker Kinderopvang — met Naam &amp; Logo</h2>
+
+      <div style="font-size:13px;font-weight:600;margin-bottom:6px;">Geschikt voor</div>
+      <div class="cl-geschikt-voor">
+        <div class="cl-pictogram">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--cl-text)">
+            <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
+          </svg>
+          <div class="cl-pictogram-check">✓</div>
+        </div>
+        <span>Vaatwasser · Industriële keuken · HACCP · B2B-portaal</span>
+      </div>
+
+      <h4>Algemeen</h4>
+      <table>
+        <tr><td>Merk</td><td><a href="#">Cookinglife</a></td></tr>
+        <tr><td>Collectie</td><td><a href="#">Cookinglife Kinderopvang</a></td></tr>
+        <tr><td>Type</td><td>Gepersonaliseerde drinkbeker</td></tr>
+        <tr><td>Garantie</td><td>2 jaar</td></tr>
+        <tr><td>SKU</td><td>CL-BK-001</td></tr>
+        <tr><td>Levertijd</td><td>5–10 werkdagen</td></tr>
       </table>
+
+      <h4>Gewicht en afmetingen</h4>
+      <table>
+        <tr><td>Inhoud peuter</td><td>250 ml</td></tr>
+        <tr><td>Inhoud BSO</td><td>350 ml</td></tr>
+        <tr><td>Hoogte</td><td>14 cm (peuter) / 17 cm (BSO)</td></tr>
+        <tr><td>Diameter</td><td>7,5 cm</td></tr>
+      </table>
+
+      <h4>Personalisatie</h4>
+      <table>
+        <tr><td>Tritan-bedrukking</td><td>Fullcolor UV-print (500+ wasscycli)</td></tr>
+        <tr><td>RVS-gravure</td><td>Lasergravure (vervaagt nooit)</td></tr>
+        <tr><td>Minimale bestelling</td><td>1 stuk (staffelkorting vanaf 20)</td></tr>
+        <tr><td>Bulk upload</td><td>Excel / CSV via B2B-portaal</td></tr>
+      </table>
+
+      <h4>Materiaal en veiligheid</h4>
+      <table>
+        <tr><td>Tritan materiaal</td><td>BPA-vrij copolyester (onbreekbaar)</td></tr>
+        <tr><td>RVS materiaal</td><td>18/8 roestvrij staal, dubbelwandig</td></tr>
+        <tr><td>Deksel</td><td>Food-grade siliconen, lekvrij</td></tr>
+        <tr><td>Vaatwasserbestendig</td><td>Ja (tot 70 °C)</td></tr>
+        <tr><td>Certificering</td><td>EU 1935/2004 · HACCP · BPA-vrij</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- ======================= TAG CLOUD ======================= -->
+  <section class="cl-tag-cloud-section">
+    <h2>Dit product kan je vinden in</h2>
+    <div class="cl-tag-cloud">
+      <a href="#">all</a>,
+      <a href="#">Bekers</a>,
+      <a href="#">Gepersonaliseerd</a>,
+      <a href="#">Kinderopvang</a>,
+      <a href="#">BSO</a>,
+      <a href="#">Peuterspeelzaal</a>,
+      <a href="#">Tritan Bekers</a>,
+      <a href="#">RVS Bekers</a>,
+      <a href="#">Lasergravure</a>,
+      <a href="#">Nieuw</a>,
+      <a href="#">B2B Kinderopvang</a>,
+      <a href="#">Cookinglife Zakelijk</a>
     </div>
   </section>
 
@@ -483,7 +608,6 @@
     <p class="cl-section-sub">Antwoorden van onze Cookinglife kinderopvang-specialisten. Staat jouw vraag er niet bij? <a href="#">Stel hem hier.</a></p>
 
     <div class="cl-faq">
-
       <details open>
         <summary>Waarom zijn gepersonaliseerde bekers belangrijk in de kinderopvang?</summary>
         <div class="cl-faq-body">
@@ -491,55 +615,27 @@
           <p>Het CBS meldt dat besmetting op het werk een belangrijke reden is voor verzuim in de kinderopvangsector<cite><a href="#bron-cbs">[1]</a></cite>. Wanneer peuters elkaars bekers gebruiken, verspreiden verkoudheid en buikgriep zich snel door de groep. Een beker met de eigen naam van het kind is direct herkenbaar — ook voor pedagogisch medewerkers die meerdere kinderen tegelijk begeleiden.</p>
         </div>
       </details>
-
       <details>
         <summary>Wat is het verschil tussen bedrukking en lasergravure?</summary>
         <div class="cl-faq-body">
           <p class="cl-faq-lead">Bedrukking is fullcolor en goedkoper; lasergravure vervaagt nooit.</p>
-          <p>De Tritan-bekers worden bedrukt met fullcolor UV-print die vaatwasserbestendig is tot 70 °C. Dat is voldoende voor dagelijks gebruik. De RVS-bekers worden gelasergraveerd: de tekst wordt in het metaal gebrand en kan nooit vervagen, afbladderen of loslaten. Ideaal als je bekers jarenlang wilt hergebruiken.</p>
+          <p>De Tritan-bekers worden bedrukt met fullcolor UV-print die vaatwasserbestendig is tot 70 °C. De RVS-bekers worden gelasergraveerd: de tekst wordt in het metaal gebrand en kan nooit vervagen, afbladderen of loslaten. Ideaal als je bekers jarenlang wilt hergebruiken.</p>
         </div>
       </details>
-
       <details>
         <summary>Hoe werkt het upload-portaal voor namenlijsten?</summary>
         <div class="cl-faq-body">
           <p class="cl-faq-lead">Upload een Excel- of CSV-bestand met namen per groep, wij doen de rest.</p>
-          <p>Via het Cookinglife B2B-portaal upload je een bestand met groepsnaam en kindnamen. Wij verwerken de bestelling en leveren de bekers gesorteerd per groep, klaar om uit te delen. Bij de jaarlijkse wisseling upload je simpelweg een nieuwe lijst voor de nieuwe kinderen.</p>
+          <p>Via het Cookinglife B2B-portaal upload je een bestand met groepsnaam en kindnamen. Wij leveren de bekers gesorteerd per groep, klaar om uit te delen. Bij de jaarlijkse wisseling upload je simpelweg een nieuwe lijst voor de nieuwe kinderen.</p>
         </div>
       </details>
-
-      <details>
-        <summary>Is de bedrukking echt vaatwasserbestendig?</summary>
-        <div class="cl-faq-body">
-          <p class="cl-faq-lead">Ja, tot 70 °C — geschikt voor industriële vaatwasmachines.</p>
-          <p>De UV-bedrukking op de Tritan-bekers is getest op 500+ wasscycli bij 70 °C zonder zichtbaar kwaliteitsverlies. De kleuren blijven helder en de tekst leesbaar. Bij de RVS-variant met lasergravure is vaatwasserbestendigheid geen issue — gravure is permanent.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Kan ik ook het logo van onze organisatie laten bedrukken?</summary>
-        <div class="cl-faq-body">
-          <p class="cl-faq-lead">Ja, logo + kindnaam is de populairste combinatie.</p>
-          <p>U stuurt uw logo als PNG of vectorbestand mee met de bestelling. Wij combineren het logo met de individuele kindnamen. Zo heeft elke beker zowel de organisatie-uitstraling als de persoonlijke herkenning. Professioneel voor ouders, praktisch voor het team.</p>
-        </div>
-      </details>
-
       <details>
         <summary>Hoeveel bekers heb ik nodig per groep?</summary>
         <div class="cl-faq-body">
           <p class="cl-faq-lead">Reken op 1,2× het aantal kinderen per groep.</p>
-          <p>Bij een groep van 16 peuters heb je 20 bekers nodig: 16 met naam + 4 reservebekers (met groepsnaam i.p.v. kindnaam) voor nieuwe kinderen of verlies. Vanaf 20 stuks geldt er staffelkorting.</p>
+          <p>Bij een groep van 16 peuters heb je 20 bekers nodig: 16 met naam + 4 reservebekers voor nieuwe kinderen of verlies. Vanaf 20 stuks geldt er staffelkorting van 15%.</p>
         </div>
       </details>
-
-      <details>
-        <summary>Welke maat beker is geschikt voor welke leeftijd?</summary>
-        <div class="cl-faq-body">
-          <p class="cl-faq-lead">250 ml voor peuters (1-4 jaar), 350 ml voor BSO (4-12 jaar).</p>
-          <p>De 250 ml beker past perfect in kleine kinderhanden en heeft een drinktuit die morsen minimaliseert. De 350 ml versie voor de BSO heeft een grotere opening en is ook geschikt voor warme dranken (tot 80 °C bij de RVS-variant).</p>
-        </div>
-      </details>
-
       <details>
         <summary>Voldoen de bekers aan voedselveiligheidsnormen?</summary>
         <div class="cl-faq-body">
@@ -547,49 +643,33 @@
           <p>Zowel de Tritan- als de RVS-bekers voldoen aan de EU-verordening voor materialen in contact met voedsel. Het Tritan is BPA-vrij en geeft geen schadelijke stoffen af. De bekers kunnen worden opgenomen in het HACCP-voedselveiligheidsplan van uw locatie.</p>
         </div>
       </details>
-
-      <details>
-        <summary>Wat kost een jaarlijkse herbestelling?</summary>
-        <div class="cl-faq-body">
-          <p class="cl-faq-lead">Alleen de nieuwe namen — bestaande bekers hoeft u niet opnieuw te bestellen.</p>
-          <p>Bij de jaarlijkse groepswisseling bestelt u alleen bekers voor de nieuwe kinderen. Upload de nieuwe namenlijst, wij vergelijken automatisch met uw vorige bestelling en produceren alleen de nieuwe bekers. Zo houdt u de kosten laag en hoeft u geen voorraad weg te gooien.</p>
-        </div>
-      </details>
-
       <details>
         <summary>Hoe snel worden gepersonaliseerde bekers geleverd?</summary>
         <div class="cl-faq-body">
           <p class="cl-faq-lead">Tritan: 5 werkdagen, RVS lasergravure: 7-10 werkdagen.</p>
-          <p>Na ontvangst van uw namenlijst produceren wij de bekers op bestelling. Tritan-bedrukking duurt 5 werkdagen, RVS-lasergravure 7-10 werkdagen. Bij spoedbestellingen is express-productie mogelijk (3 werkdagen, toeslag). Plan de jaarlijkse bestelling 2 weken voor groepswisseling.</p>
+          <p>Na ontvangst van uw namenlijst produceren wij de bekers op bestelling. Bij spoedbestellingen is express-productie mogelijk (3 werkdagen, toeslag). Plan de jaarlijkse bestelling 2 weken voor groepswisseling.</p>
         </div>
       </details>
-
     </div>
   </section>
 
-  <!-- ======================= REVIEWS SNIPPET ======================= -->
-  <section class="cl-section" style="background:var(--cl-bg-soft);padding:40px 24px;border-radius:8px;">
-    <h2>Wat kinderopvanglocaties zeggen <span style="font-size:16px;color:var(--cl-muted);font-weight:400;">· 143 reviews</span></h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:20px;">
-      <div style="background:#fff;padding:20px;border-radius:8px;border:1px solid var(--cl-border);">
-        <div class="cl-stars">★★★★★</div>
-        <strong style="display:block;margin:8px 0 4px;">Geen bekerverwisseling meer</strong>
-        <p style="font-size:14px;margin:0;color:var(--cl-text);">"Elke peuter heeft nu een beker met zijn eigen naam. Geen verwarring meer, minder ziekteverspreiding. De bedrukking houdt het prima in onze industriële vaatwasmachine."</p>
-        <div style="font-size:12px;color:var(--cl-muted);margin-top:8px;">— KDV De Zonnestraal, Groningen · B2B-klant</div>
+  <!-- ======================= REVIEW SUMMARY ======================= -->
+  <section class="cl-review-summary">
+    <div class="cl-big-rating">
+      <div style="position:relative;display:inline-block;">
+        <span class="cl-big-star">★</span>
+        <span class="cl-big-score">4,9</span>
       </div>
-      <div style="background:#fff;padding:20px;border-radius:8px;border:1px solid var(--cl-border);">
-        <div class="cl-stars">★★★★★</div>
-        <strong style="display:block;margin:8px 0 4px;">Upload-portaal is ideaal</strong>
-        <p style="font-size:14px;margin:0;color:var(--cl-text);">"We uploaden elk jaar onze nieuwe namenlijst per groep en binnen een week liggen de bekers er. Scheelt enorm veel uitzoekwerk. De RVS-variant met gravure is prachtig."</p>
-        <div style="font-size:12px;color:var(--cl-muted);margin-top:8px;">— BSO De Vlinder, Groningen · B2B-klant</div>
-      </div>
-      <div style="background:#fff;padding:20px;border-radius:8px;border:1px solid var(--cl-border);">
-        <div class="cl-stars">★★★★☆</div>
-        <strong style="display:block;margin:8px 0 4px;">Logo op alle bekers is sterk</strong>
-        <p style="font-size:14px;margin:0;color:var(--cl-text);">"Met ons logo op elke beker ziet het er professioneel uit voor ouders. Het lekvrije deksel is echt lekvrij — zelfs in tassen. Tip: bestel 20% extra als reserve."</p>
-        <div style="font-size:12px;color:var(--cl-muted);margin-top:8px;">— Peuterspeelzaal 't Hummelke, Utrecht · B2B-klant</div>
-      </div>
+      <small>143 Reviews</small>
     </div>
+    <div class="cl-rating-bars">
+      <div class="cl-rating-row"><span class="cl-row-stars">★★★★★</span><div class="cl-bar"><span style="width:88%;"></span></div><span class="cl-row-count">(126)</span></div>
+      <div class="cl-rating-row"><span class="cl-row-stars">★★★★☆</span><div class="cl-bar"><span style="width:8%;"></span></div><span class="cl-row-count">(11)</span></div>
+      <div class="cl-rating-row"><span class="cl-row-stars">★★★☆☆</span><div class="cl-bar"><span style="width:3%;"></span></div><span class="cl-row-count">(4)</span></div>
+      <div class="cl-rating-row"><span class="cl-row-stars">★★☆☆☆</span><div class="cl-bar"><span style="width:1%;"></span></div><span class="cl-row-count">(2)</span></div>
+      <div class="cl-rating-row"><span class="cl-row-stars">★☆☆☆☆</span><div class="cl-bar"><span style="width:0%;"></span></div><span class="cl-row-count">(0)</span></div>
+    </div>
+    <button class="cl-write-review">Schrijf je review ✎</button>
   </section>
 
   <!-- ======================= BRONNEN ======================= -->
